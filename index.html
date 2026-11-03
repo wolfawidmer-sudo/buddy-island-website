@@ -32,15 +32,15 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero">
-      <p class="eyebrow">Testversion 0.3 · Windows 10 & 11</p>
+      <p class="eyebrow">Testversion 0.4 · Windows 10 & 11</p>
       <h1>Dein Assistent wohnt<br>oben am Bildschirm.</h1>
-      <p class="lead">Buddy Island bringt Claude in ein kleines Island oben in der Mitte deines Windows-Bildschirms. Fragen, Timer, Musik, Termine, Mitteilungen, und wenn du willst, bedient Buddy den PC für dich.</p>
+      <p class="lead">Buddy Island ist ein kleines Island oben in der Mitte deines Windows-Bildschirms. Fragen, Timer, Musik, Termine, Mitteilungen, und wenn du willst, bedient Buddy den PC für dich. Er läuft gratis mit einer lokalen KI auf deinem PC oder mit Claude, OpenAI, Grok oder Gemini.</p>
       <div class="cta" id="download">
         <a class="btn" id="downloadBtn" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest">
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9M6 9l4 4 4-4M4 16.5h12"/></svg>
           Für Windows herunterladen
         </a>
-        <p class="cta-note"><span id="downloadInfo">Gratis · ca. 120 MB</span> · braucht einen eigenen <a href="#faq-key">Claude-API-Key</a></p>
+        <p class="cta-note"><span id="downloadInfo">Gratis · ca. 120 MB</span> · läuft lokal ohne Konto, <a href="#faq-key">API-Key optional</a></p>
       </div>
 
       <!-- Vorschau: animiertes Island auf einem Bildschirm -->
@@ -64,18 +64,18 @@
         <div class="cursor" id="demoCursor" aria-hidden="true"></div>
         <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
-      <p class="screen-caption" id="demoCaption">Im Ruhezustand ist Buddy nur ein kleines Island.</p>
+      <p class="screen-caption" id="demoCaption">Im Ruhezustand zeigt Buddy nur seine Augen.</p>
     </section>
 
     <!-- Funktionen -->
     <section class="section" id="funktionen">
       <h2>Alles, was ein Assistent können sollte.</h2>
-      <p class="section-lead">Buddy läuft mit deinem eigenen Claude-API-Key und braucht kein Konto bei uns.</p>
+      <p class="section-lead">Buddy braucht kein Konto bei uns. Er startet mit einer lokalen KI und nimmt auf Wunsch deinen eigenen API-Key.</p>
       <div class="features">
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M4.5 7.5l3 2M16.5 14.5l3 2M4.5 16.5l3-2M16.5 9.5l3-2"/><circle cx="12" cy="12" r="3"/></svg>
           <h3>Automatische Modellwahl</h3>
-          <p>Haiku prüft jede Anfrage und nimmt das günstigste Modell, das reicht. Hakt es, wechselt Buddy selbst auf ein stärkeres.</p>
+          <p>Ein kleines Modell prüft jede Anfrage und nimmt das günstigste, das reicht. Hakt es, wechselt Buddy selbst auf ein stärkeres.</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h8"/><path d="M16 17l2 2 3-4"/></svg>
@@ -88,19 +88,34 @@
           <p>Kosten, Tokens und Limits von Buddy, Claude Code, Codex und mehr. Was ein Anbieter nicht herausgibt, steht ehrlich als «nicht verfügbar».</p>
         </article>
         <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4 4v-4h0A2 2 0 0 1 4 14z"/></svg>
-          <h3>Chat mit Claude</h3>
-          <p>Antworten erscheinen live im Island, mit Code-Blöcken und Kopieren-Knopf.</p>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8 8.5l2.8 6.6M16 8.5l-2.8 6.6M8.5 7h7"/></svg>
+          <h3>Deine Wahl der KI</h3>
+          <p>Claude, OpenAI, Grok, Gemini oder ein lokales Modell von Hugging Face. Was ein Modell nicht kann (z. B. Bildschirmfotos), sagt Buddy ehrlich.</p>
+        </article>
+        <article class="feature">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4M8 9l2.5 2.5L8 14M13 14h3"/></svg>
+          <h3>Lokal und gratis</h3>
+          <p>Buddy prüft Arbeitsspeicher, Prozessor und Grafikkarte, empfiehlt das schnellste und das beste Modell und richtet es mit einem Klick ein. Danach läuft er ohne Internet.</p>
+        </article>
+        <article class="feature">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z"/></svg>
+          <h3>Spricht deine Sprache</h3>
+          <p>Buddy übernimmt beim Start die Sprache von Windows: Oberfläche und Antworten kommen auf Deutsch, Englisch oder Französisch.</p>
+        </article>
+        <article class="feature">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M8 10.5h5M10.5 8v5"/></svg>
+          <h3>Erkennt deine Tools</h3>
+          <p>Claude Code, Codex, ChatGPT, Gemini CLI und lokale Laufzeiten findet Buddy selbst. Was nicht installiert ist, taucht in Buddy gar nicht erst auf.</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l5 15 2.5-6.5L19 10z"/></svg>
           <h3>PC-Steuerung</h3>
-          <p>«Öffne den Editor und schreib eine Einkaufsliste.» Buddy fragt vorher und bedient dann Maus und Tastatur.</p>
+          <p>«Öffne den Editor und schreib eine Einkaufsliste.» Buddy fragt vorher und bedient dann Maus und Tastatur (mit Claude).</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
-          <h3>Läuft gerade</h3>
-          <p>Musik aus Spotify oder YouTube erscheint mit Cover im Island. Pause und Weiter direkt dort.</p>
+          <h3>Musik mit Visualizer</h3>
+          <p>Spotify oder YouTube erscheinen mit Cover im Island, die Balken folgen dem echten Systemton. Pause und Weiter direkt dort.</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg>
@@ -131,6 +146,48 @@
     </section>
 
     <!-- Bilder -->
+    <!-- Neu in 0.4: Vorschauen aus HTML und CSS, gleiche Kurven wie in der App -->
+    <section class="section" id="neu">
+      <h2>Neu in Version 0.4.</h2>
+      <p class="section-lead">Mehr Auswahl bei der KI, ein echter Musik-Visualizer und ein Island, das sich ganz an den Bildschirmrand schmiegt.</p>
+      <div class="mocks">
+        <figure class="mock">
+          <div class="mock-screen" aria-hidden="true">
+            <div class="m-island m-notch" id="mockNotch"><span class="m-eyes"><i></i><i></i></span></div>
+            <span class="m-hint" id="mockNotchHint">Nach oben ziehen</span>
+          </div>
+          <figcaption><b>Notch-Modus.</b> Zieh das Island nach oben: Es wird zu einer tiefschwarzen Kerbe am Bildschirmrand, ohne Schatten und ohne Spalt. Nach unten ziehen oder klicken holt es zurück.</figcaption>
+        </figure>
+        <figure class="mock">
+          <div class="mock-screen" aria-hidden="true">
+            <div class="m-music">
+              <span class="m-cover"></span>
+              <span class="m-track"><b>Blinding Lights</b><small>The Weeknd</small></span>
+              <span class="m-bars" id="mockBars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+          </div>
+          <figcaption><b>Musik mit Visualizer.</b> Cover und Titel im Island, die Balken folgen dem Pegel der Windows-Tonausgabe. Es wird nichts aufgenommen.</figcaption>
+        </figure>
+        <figure class="mock">
+          <div class="mock-screen mock-settings" aria-hidden="true">
+            <div class="m-panel">
+              <div class="m-tabs"><span class="on">Provider</span><span>Tools</span><span>Audio &amp; Visuals</span><span>System</span></div>
+              <p class="m-h">Provider &amp; API-Keys</p>
+              <div class="m-group">
+                <div class="m-row"><span>Anbieter</span><span class="m-select" id="mockProvider">Lokal (Hugging Face)</span></div>
+                <div class="m-row"><span>Lokales Modell</span><span class="m-val" id="mockModel">Qwen2.5 3B · bereit</span></div>
+              </div>
+              <div class="m-group m-reco">
+                <div class="m-row"><span>Am schnellsten</span><span class="m-val">Qwen2.5 1.5B</span></div>
+                <div class="m-row"><span>Beste Antworten</span><span class="m-val">Qwen2.5 3B</span></div>
+              </div>
+            </div>
+          </div>
+          <figcaption><b>Neue Einstellungen.</b> Vier klare Bereiche, Anbieter per Auswahl, Empfehlung für deinen PC. Erkannte Tools erscheinen nur, wenn sie installiert sind.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="section shots">
       <h2>Ruhig, klar, ohne Ablenkung.</h2>
       <p class="section-lead">Im Leerlauf läuft keine einzige Animation. CPU und GPU bleiben praktisch bei 0 %.</p>
@@ -138,7 +195,7 @@
         <figure><img src="img/music.png" alt="Offenes Island mit laufender Musik und Vorschlägen"><figcaption>Musik und Vorschläge</figcaption></figure>
         <figure><img src="img/chat.png" alt="Chat mit Timer und Mitteilungen"><figcaption>Timer und Mitteilungen</figcaption></figure>
         <figure><img src="img/confirm.png" alt="Buddy fragt, ob er den PC steuern darf"><figcaption>Fragt vor dem Steuern</figcaption></figure>
-        <figure><img src="img/settings.png" alt="Einstellungen im iOS-Stil"><figcaption>Einstellungen</figcaption></figure>
+        <figure><img src="img/settings.png" alt="Einstellungen mit den Bereichen Provider, Tools, Audio &amp; Visuals und System"><figcaption>Einstellungen mit Anbieter-Wahl</figcaption></figure>
       </div>
       <figure class="wide"><img src="img/glow.png" alt="Leuchtender weiss-grauer Rand um den Bildschirm"><figcaption>Wenn Buddy hinschaut oder steuert, leuchtet der Bildschirmrand.</figcaption></figure>
     </section>
@@ -157,7 +214,7 @@
         </li>
         <li>
           <span class="step-n">3</span>
-          <div><h3>API-Key verbinden</h3><p>Erstelle in der <a href="https://platform.claude.com/settings/keys" rel="noopener">Claude Console</a> einen Key, klick oben aufs Island und füge ihn unter «API-Key verbinden» ein.</p></div>
+          <div><h3>KI einrichten</h3><p>Klick aufs Island und dann auf «Lokale KI einrichten»: Buddy wählt das passende Modell für deinen PC und lädt es. Lieber Claude, OpenAI, Grok oder Gemini? Füge in den Einstellungen unter «Provider &amp; API-Keys» deinen Key ein.</p></div>
         </li>
         <li>
           <span class="step-n">4</span>
@@ -176,11 +233,11 @@
         </div>
         <div class="card">
           <h3>Verschlüsselt gespeichert</h3>
-          <p>API-Key und Kalender-Link liegen mit der Windows-Verschlüsselung nur auf deinem PC.</p>
+          <p>API-Keys und Kalender-Link liegen mit der Windows-Verschlüsselung nur auf deinem PC. Lokale Modelle schicken gar nichts weg.</p>
         </div>
         <div class="card">
           <h3>Du entscheidest</h3>
-          <p>Bildschirmfotos gehen nur bei der PC-Steuerung an Claude, und nur nachdem du erlaubt hast.</p>
+          <p>Texte gehen nur an den KI-Anbieter, den du wählst. Bildschirmfotos nur bei der PC-Steuerung mit Claude, und nur nachdem du erlaubt hast.</p>
         </div>
       </div>
       <p class="more"><a href="privacy.html">Ganze Datenschutzerklärung lesen →</a></p>
@@ -191,8 +248,16 @@
       <h2>Fragen</h2>
       <div class="faq">
         <details id="faq-key">
-          <summary>Was ist ein Claude-API-Key und was kostet er?</summary>
-          <p>Mit dem Key nutzt Buddy Claude direkt bei Anthropic. Du bezahlst dort nur, was du brauchst, meist wenige Rappen pro Unterhaltung. Die PC-Steuerung kostet mehr, weil Bildschirmfotos mitgeschickt werden. Buddy selbst ist gratis.</p>
+          <summary>Brauche ich einen API-Key?</summary>
+          <p>Nein. Ohne Key läuft Buddy mit einem lokalen Modell gratis auf deinem PC. Ein Key von Claude, OpenAI, xAI (Grok) oder Google (Gemini) macht die Antworten klüger und ist nötig für die PC-Steuerung (nur Claude). Du bezahlst beim Anbieter nur, was du brauchst, meist wenige Rappen pro Unterhaltung.</p>
+        </details>
+        <details>
+          <summary>Welches lokale Modell passt zu meinem PC?</summary>
+          <p>Buddy misst Arbeitsspeicher, Prozessor und Grafikkarte und schlägt zwei Modelle vor: das schnellste und das mit den besten Antworten. Mit einer NVIDIA-Grafikkarte laufen auch grössere Modelle flüssig, sonst sind kleine Modelle wie Qwen2.5 1.5B die beste Wahl. Der erste Download braucht etwa 1 bis 3 GB.</p>
+        </details>
+        <details>
+          <summary>In welcher Sprache antwortet Buddy?</summary>
+          <p>In der Sprache von Windows. Die Oberfläche gibt es auf Deutsch, Englisch und Französisch, für andere Sprachen ist sie englisch, die Antworten kommen trotzdem in deiner Sprache. In den Einstellungen kannst du die Sprache auch fest wählen.</p>
         </details>
         <details>
           <summary>Warum warnt Windows beim Installieren?</summary>
@@ -215,8 +280,8 @@
   </main>
 
   <footer class="footer">
-    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · Version 0.3.0</p>
-    <p>Nutzt Claude von Anthropic über die offizielle API. Kein offizielles Produkt von Anthropic, Apple oder Microsoft.</p>
+    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · Version 0.4.0</p>
+    <p>Nutzt die offiziellen APIs von Anthropic, OpenAI, xAI und Google oder lokale Modelle über Hugging Face Transformers. Kein offizielles Produkt dieser Firmen, von Apple oder Microsoft.</p>
     <p><a href="privacy.html">Datenschutz</a> · <a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></p>
   </footer>
 

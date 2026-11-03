@@ -22,17 +22,21 @@
       <h1>Datenschutz bei Buddy Island</h1>
       <p>Stand: November 2026</p>
       <p>Buddy Island ist ein privates Testprojekt von Wolf Widmer. Die App läuft vollständig auf deinem Windows-PC. Es gibt keine Server von Buddy Island, kein Konto, keine Werbung und keine Statistiken.</p>
-      <h2>Was an Claude (Anthropic) geht</h2>
-      <p>Buddy benutzt die Claude-API mit <b>deinem eigenen API-Key</b>. An Anthropic gehen nur:</p>
+      <h2>Lokale KI</h2>
+      <p>Ohne API-Key läuft Buddy mit einem <b>lokalen Modell</b> (Hugging Face Transformers) auf deinem PC. Dabei verlässt nichts von deinen Eingaben den PC. Nur beim Einrichten lädt Buddy Python-Pakete (von python.org bzw. dem Microsoft Store und PyPI) und das Modell (von Hugging Face) herunter. Zur Empfehlung des Modells liest Buddy Arbeitsspeicher, Prozessor und Grafikkarte aus, nur auf dem PC.</p>
+      <h2>Was an den gewählten KI-Anbieter geht</h2>
+      <p>Wählst du Claude (Anthropic), OpenAI, Grok (xAI) oder Gemini (Google), benutzt Buddy dessen API mit <b>deinem eigenen API-Key</b>. Der Key geht nur an diesen einen Anbieter. An ihn gehen nur:</p>
       <ul>
       <li>was du Buddy schreibst oder sagst, und seine Antworten,</li>
       <li>Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst),</li>
-      <li>bei der <b>PC-Steuerung</b> Bildschirmfotos deines Bildschirms. Buddy fragt vorher um Erlaubnis. Lass ihn nicht steuern, während Passwörter oder Privates offen sind.</li>
+      <li>bei der <b>PC-Steuerung</b> (nur mit Claude) Bildschirmfotos deines Bildschirms. Buddy fragt vorher um Erlaubnis. Lass ihn nicht steuern, während Passwörter oder Privates offen sind.</li>
       </ul>
-      <p>Wie Anthropic diese Daten behandelt, steht in der Datenschutzerklärung von Anthropic für die API.</p>
+      <p>Wie der Anbieter diese Daten behandelt, steht in seiner Datenschutzerklärung für die API.</p>
       <h2>Was nur auf deinem PC bleibt</h2>
       <ul>
-      <li>Dein <b>API-Key</b> und dein <b>Kalender-Link</b>: mit der Windows-Verschlüsselung (DPAPI) gespeichert.</li>
+      <li>Deine <b>API-Keys</b>, ein allfälliger <b>Hugging-Face-Token</b> und dein <b>Kalender-Link</b>: mit der Windows-Verschlüsselung (DPAPI) gespeichert.</li>
+      <li><b>Erkannte Tools</b>: Buddy prüft nur, ob Programme wie Claude Code, Codex oder Python installiert sind (Pfade und Versionen), nicht deren Inhalte. Die Protokolle von Claude Code und Codex liest er nur für die Nutzungsansicht, abschaltbar in den Einstellungen.</li>
+      <li><b>Musik-Visualizer</b>: Buddy liest nur den Pegel der Windows-Tonausgabe (wie der Lautstärkemixer). Es wird nichts aufgenommen oder gespeichert.</li>
       <li><b>Chatverlauf</b>, <b>Einstellungen</b> und ein kurzes <b>Protokoll</b> für die Fehlersuche (ohne Chat-Inhalte) im Ordner <code>%APPDATA%\Buddy Island</code>.</li>
       <li><b>Windows-Mitteilungen</b>, <b>«Läuft gerade»</b> (Musik) und <b>Termine</b>: Buddy liest sie nur, um sie im Island zu zeigen. Sie werden nicht dauerhaft gespeichert.</li>
       <li><b>Spielmodus</b>: Buddy schaut nur, welches Programm im Vordergrund ist und ob Windows «Vollbild» meldet.</li>
