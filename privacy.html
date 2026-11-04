@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://wolfawidmer-sudo.github.io/buddy-island-website/privacy.html">
   <meta property="og:title" content="Datenschutz – Buddy Island">
   <meta property="og:image" content="https://wolfawidmer-sudo.github.io/buddy-island-website/img/og.png">
-  <meta name="theme-color" content="#edf0f4">
+  <meta name="theme-color" content="#f4f2ee">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src https://api.github.com https://raw.githubusercontent.com">
   <link rel="icon" href="favicon.png">
   <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
@@ -16,29 +16,30 @@
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-  <header class="topbar">
-    <nav class="island-nav" id="nav" aria-label="Hauptnavigation">
-      <a class="brand" href="./" aria-label="Buddy Island, zur Startseite">
-        <span class="eyes" aria-hidden="true"><i></i><i></i></span>
-        <span>Buddy Island</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="./#funktionen">Funktionen</a></li>
-        <li><a href="./#installation">Installation</a></li>
-        <li><a href="privacy.html" aria-current="true">Datenschutz</a></li>
-        <li><a href="./#fragen">Fragen</a></li>
-      </ul>
-      <a class="nav-download" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Download</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen"><i></i><i></i></button>
-    </nav>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="mark" href="./" aria-label="Buddy Island, zur Startseite"><span class="eyes" aria-hidden="true"><i></i><i></i></span>Buddy Island</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav">
+          <li><a href="./#kann">Funktionen</a></li>
+          <li><a href="./#ki">KI</a></li>
+          <li><a href="./#start">Installation</a></li>
+          <li><a href="./#fragen">Fragen</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-small" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Download</a>
+    </div>
   </header>
   <main id="inhalt">
-    <article class="doc">
+    <article class="doc wrap">
 <h1>Datenschutz bei Buddy Island</h1>
 <p class="stand">Stand: November 2026</p>
 <p>Buddy Island ist ein privates Testprojekt von Wolf Widmer. Die App läuft vollständig auf deinem Windows-PC. Es gibt keine Server von Buddy Island, kein Konto, keine Werbung und keine Statistiken.</p>
 <h2>Lokale KI</h2>
-<p>Ohne API-Key läuft Buddy mit einem <strong>lokalen Modell</strong> (Hugging Face Transformers) auf deinem PC. Dann verlässt nichts von deinen Eingaben den PC. Nur beim Einrichten lädt Buddy Python (python.org bzw. Microsoft Store), Pakete (PyPI) und das Modell (Hugging Face) herunter. Für die Empfehlung liest Buddy Arbeitsspeicher, Prozessor und Grafikkarte aus, nur lokal.</p>
+<p>Mit der <strong>lokalen KI</strong> läuft das Modell über <strong>Ollama</strong> oder, für sehr grosse Modelle, über <strong>Colibrì</strong> auf deinem PC. Deine Nachrichten gehen nur an dieses Programm auf deinem PC (Adresse 127.0.0.1, von aussen nicht erreichbar) und an keinen KI-Anbieter.</p>
+<p>Aus dem Internet geladen wird nur, was du in Buddy bestätigst: das Installationsprogramm von Ollama (ollama.com, Buddy prüft vorher die digitale Signatur), Colibrì (GitHub, Buddy prüft die veröffentlichte Prüfsumme), die Modelle (Ollama-Registry bzw. Hugging Face) sowie eine Liste empfohlener Modelle und deren Grösse. Dabei werden keine Inhalte und keine Hardware-Daten verschickt. Für die Empfehlung liest Buddy Prozessor, Arbeitsspeicher, Grafikkarte, Treiberversion, Laufwerksart und freien Speicherplatz aus, nur lokal. Ältere Einrichtungen mit Hugging Face Transformers funktionieren weiter wie bisher.</p>
+<h2>Bildschirm</h2>
+<p>Buddy nimmt deinen Bildschirm nur auf, während er eine Aufgabe mit PC-Steuerung ausführt, die du erlaubt hast. Solange er das tut, leuchtet eine Linie am Bildschirmrand; ohne diese Linie nimmt er nichts auf. Die Bildschirmfotos gehen nur an Claude (die PC-Steuerung gibt es nur dort) und werden nicht gespeichert. Läuft ein Spiel, pausiert die Aufnahme.</p>
 <h2>Was an den gewählten KI-Anbieter geht</h2>
 <p>Mit Claude (Anthropic), OpenAI, Grok (xAI) oder Gemini (Google) benutzt Buddy dessen API mit <strong>deinem eigenen API-Key</strong>. Jeder Key geht nur an seinen Anbieter. An ihn gehen nur:</p>
 <ul>
@@ -66,7 +67,7 @@
 <h2>Erkennung und Visualizer</h2>
 <ul>
 <li>Buddy prüft, ob Programme wie Claude Code, Codex oder Python installiert sind (Pfade und Versionen, keine Inhalte).</li>
-<li>Für den Musik-Visualizer und den Bildschirmrand wertet Buddy den Ton aus, den Windows gerade abspielt (Lautstärke in Bass, Mitten und Höhen), und zwar nur, solange Windows eine Wiedergabe meldet. Das passiert ausschliesslich auf dem PC: Es wird nichts aufgenommen, gespeichert oder verschickt.</li>
+<li>Für den Musik-Visualizer im Island wertet Buddy den Ton aus, den Windows gerade abspielt (Lautstärke in Bass, Mitten und Höhen), und zwar nur, solange Windows eine Wiedergabe meldet. Das passiert ausschliesslich auf dem PC: Es wird nichts aufgenommen, gespeichert oder verschickt.</li>
 </ul>
 <h2>Sprache</h2>
 <ul>
@@ -83,11 +84,12 @@
       <a class="doc-back" href="./">Zurück zur Startseite</a>
     </article>
   </main>
-  <footer class="footer">
-    <a class="brand dark" href="./"><span class="eyes" aria-hidden="true"><i></i><i></i></span><span>Buddy Island</span></a>
-    <ul class="footer-links">
+  <footer class="foot wrap">
+    <p class="mark"><span class="eyes" aria-hidden="true"><i></i><i></i></span>Buddy Island</p>
+    <p>Ein Projekt von Wolf Widmer, Bern.</p>
+    <ul>
       <li><a href="./">Startseite</a></li>
-      <li><a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></li>
+      <li><a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode</a></li>
     </ul>
   </footer>
   <script src="script.js"></script>
