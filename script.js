@@ -24,10 +24,15 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if (!('IntersectionObserver' in window)) return;
   const visible = new Map();
+  let currentId = null;
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) visible.set(e.target.id, e.isIntersecting);
     const current = sections.find((s) => visible.get(s.id));
-    links.forEach((a) => a.setAttribute('aria-current', String(Boolean(current) && a.getAttribute('href') === `#${current.id}`)));
+    const id = current ? current.id : '';
+    // Nur bei echtem Abschnittswechsel anfassen: jede Änderung lässt die Navigation neu zeichnen
+    if (id === currentId) return;
+    currentId = id;
+    links.forEach((a) => a.setAttribute('aria-current', String(a.getAttribute('href') === `#${id}`)));
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach((s) => io.observe(s));
 })();
@@ -67,6 +72,17 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (on && !running) { running = true; step(); }
     if (!on && running) { running = false; clearTimeout(timer); }
   }, { threshold: 0.2 }).observe(demo);
+})();
+
+// ---------- Endlos-Animationen nur, solange sie zu sehen sind ----------
+// Der pulsierende Rand ist ein grosses Bild: ausserhalb des Sichtbereichs würde er den
+// Compositor trotzdem jedes Bild neu zusammensetzen lassen, auch beim Scrollen.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) e.target.classList.toggle('offscreen', !e.isIntersecting);
+  });
+  document.querySelectorAll('.screen').forEach((el) => io.observe(el));
 })();
 
 // ---------- Funktionen: Reiter (Pfeiltasten, Pos1, Ende) ----------
