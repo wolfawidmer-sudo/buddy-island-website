@@ -11,11 +11,11 @@
   const scenes = [
     { state: 'idle', label: '', caption: 'Im Ruhezustand zeigt Buddy nur seine Augen.', ms: 2600 },
     { state: 'idle', label: '', notch: true, caption: 'Nach oben gezogen wird das Island zur schwarzen Kerbe am Rand.', ms: 2600 },
-    { state: 'busy', label: 'denkt …', caption: 'Frag etwas: Buddy denkt lokal oder mit Claude, OpenAI, Grok oder Gemini nach.', ms: 2400 },
-    { state: 'music', label: 'Midnight Drive · Nova Lane', caption: 'Läuft Musik, folgen Balken und Bildschirmrand dem echten Ton.', ms: 4200, music: true },
-    { state: 'peek', small: 'WhatsApp', label: 'Lea: Kommst du heute ins Training?', caption: 'Mitteilungen kommen oben statt unten rechts.', ms: 3200 },
+    { state: 'busy', label: 'denkt …', caption: 'Frag einfach drauflos, Buddy denkt mit.', ms: 2400 },
+    { state: 'music', label: 'Midnight Drive · Nova Lane', caption: 'Läuft Musik, tanzen Balken und Bildschirmrand im Takt.', ms: 4200, music: true },
+    { state: 'peek', small: 'WhatsApp', label: 'Lea: Kommst du heute ins Training?', caption: 'Nachrichten erscheinen oben, wo du hinschaust.', ms: 3200 },
     { state: 'timer', label: 'Pizza  9:58', caption: '«Stell einen Timer für die Pizza.»', ms: 2600, tick: true },
-    { state: 'control', label: 'Klickt …', caption: 'Bedient Buddy länger den PC, leuchtet der Rand.', ms: 4200, glow: true },
+    { state: 'control', label: 'Klickt …', caption: 'Hilft Buddy am PC mit, leuchtet der Rand.', ms: 4200, glow: true },
   ];
 
   let i = 0;

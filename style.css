@@ -345,3 +345,55 @@ figcaption { margin-top: 10px; font-size: 14px; color: var(--text-3); text-align
 .wide img { width: 100%; height: auto; }
 @media (max-width: 900px) { .news { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .news { grid-template-columns: 1fr; } }
+
+/* ---------- Symmetrie: alles auf einer Mittelachse ----------
+   Navigation dreigeteilt (Marke | Links mittig | Download), Karten zentriert gesetzt,
+   Reihen mit gleich breiten Karten, unvollständige letzte Reihen mittig. */
+.nav { display: grid; grid-template-columns: 1fr auto 1fr; }
+.nav-links { margin-left: 0; justify-self: center; }
+.nav .btn.small { justify-self: end; }
+
+.feature, .news-item, .card, .steps li { text-align: center; }
+.feature svg { display: block; margin: 0 auto; }
+
+/* Karten-Reihen: gleich breit, letzte Reihe zentriert */
+.news, .features, .privacy-grid, .steps {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 14px;
+}
+.news > *, .privacy-grid > * { flex: 0 1 calc((100% - 28px) / 3); }
+.features > *, .steps > * { flex: 0 1 calc((100% - 42px) / 4); }
+.news-item.fix h3::after { content: none; }
+.news-item.fix h3::before { content: none; }
+
+/* Installation als vier gleiche Karten */
+.steps { max-width: none; margin: 48px 0 0; }
+.steps li { flex-direction: column; align-items: center; gap: 0; padding: 24px; }
+.steps h3 { margin: 14px 0 6px; }
+
+/* Fragen: mittige Spalte, Frage zentriert, Plus darunter nicht nötig – daneben, symmetrisch gepolstert */
+.faq summary { justify-content: center; text-align: center; padding: 20px 48px; position: relative; }
+.faq summary::after { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq p { text-align: center; padding: 0 32px 22px; }
+
+.gallery { align-items: stretch; }
+.gallery figure { display: flex; flex-direction: column; align-items: center; }
+
+@media (max-width: 900px) {
+  .news > *, .privacy-grid > *, .features > *, .steps > * { flex-basis: calc((100% - 14px) / 2); }
+}
+@media (max-width: 560px) {
+  .nav { grid-template-columns: 1fr auto; }
+  .news > *, .privacy-grid > *, .features > *, .steps > * { flex-basis: 100%; }
+}
+
+/* Vorschau-Bildschirm: Fenster und Licht mittig */
+.window { left: 27%; }
+.wallpaper {
+  background:
+    radial-gradient(90% 70% at 50% 0%, #3a4152 0%, transparent 60%),
+    radial-gradient(80% 60% at 50% 100%, #3d383d 0%, transparent 65%),
+    linear-gradient(180deg, #20232b, #121318);
+}
+.taskbar i:first-child { background: rgba(255, 255, 255, 0.14); }
+.taskbar i:nth-child(3) { background: rgba(255, 255, 255, 0.3); }
