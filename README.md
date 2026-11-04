@@ -8,11 +8,12 @@ Die Website von [Buddy Island](https://github.com/wolfawidmer-sudo/buddy-island)
 
 | Datei | Inhalt |
 | --- | --- |
-| `index.html` | Startseite mit animierter Vorschau, «Neu in …», vier Kernfunktionen, Installation, Datenschutz, FAQ |
+| `index.html` | Startseite: Insel-Navigation, Hero mit echten Island-Zuständen, «Neu in …», Funktionen als Reiter mit echten Screenshots, Installation, Datenschutz, Fragen |
 | `privacy.html` | Datenschutzerklärung |
 | `style.css` | Gestaltung |
-| `script.js` | Vorschau-Animation, Download-Knopf, Version und Neuigkeiten |
-| `img/` | Screenshots und Vorschaubild |
+| `script.js` | Navigation, Hero-Ablauf, Reiter, Fragen, Download-Knopf, Version und Neuigkeiten (ohne Framework) |
+| `img/` | Echte Screenshots aus der App (WebP, mit Transparenz), Aufnahme des Bildschirmrands, Vorschaubild |
+| `fonts/` | Bricolage Grotesque (Überschriften, SIL Open Font License), lokal eingebunden |
 
 Reines HTML, CSS und JavaScript, ohne Build-Schritt.
 

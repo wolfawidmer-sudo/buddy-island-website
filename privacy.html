@@ -4,59 +4,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Datenschutz – Buddy Island</title>
-  <meta name="description" content="Wie Buddy Island mit deinen Daten umgeht.">
+  <meta name="description" content="Wie Buddy Island mit deinen Daten umgeht: was auf deinem PC bleibt und was an den gewählten KI-Anbieter geht.">
+  <link rel="canonical" href="https://wolfawidmer-sudo.github.io/buddy-island-website/privacy.html">
+  <meta property="og:title" content="Datenschutz – Buddy Island">
+  <meta property="og:image" content="https://wolfawidmer-sudo.github.io/buddy-island-website/img/og.png">
+  <meta name="theme-color" content="#edf0f4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src https://api.github.com https://raw.githubusercontent.com">
   <link rel="icon" href="favicon.png">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'">
+  <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="./" aria-label="Buddy Island">
-      <span class="brand-pill"><i></i><i></i></span>
-      Buddy Island
-    </a>
-    <a class="btn small" href="./#download" style="margin-left:auto">Download</a>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="topbar">
+    <nav class="island-nav" id="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="./" aria-label="Buddy Island, zur Startseite">
+        <span class="eyes" aria-hidden="true"><i></i><i></i></span>
+        <span>Buddy Island</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./#funktionen">Funktionen</a></li>
+        <li><a href="./#installation">Installation</a></li>
+        <li><a href="privacy.html" aria-current="true">Datenschutz</a></li>
+        <li><a href="./#fragen">Fragen</a></li>
+      </ul>
+      <a class="nav-download" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Download</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen"><i></i><i></i></button>
+    </nav>
   </header>
-  <main>
+  <main id="inhalt">
     <article class="doc">
-      <h1>Datenschutz bei Buddy Island</h1>
-      <p>Stand: November 2026</p>
-      <p>Buddy Island ist ein privates Testprojekt von Wolf Widmer. Die App läuft vollständig auf deinem Windows-PC. Es gibt keine Server von Buddy Island, kein Konto, keine Werbung und keine Statistiken.</p>
-      <h2>Lokale KI</h2>
-      <p>Ohne API-Key läuft Buddy mit einem <b>lokalen Modell</b> (Hugging Face Transformers) auf deinem PC. Dabei verlässt nichts von deinen Eingaben den PC. Nur beim Einrichten lädt Buddy Python-Pakete (von python.org bzw. dem Microsoft Store und PyPI) und das Modell (von Hugging Face) herunter. Zur Empfehlung des Modells liest Buddy Arbeitsspeicher, Prozessor und Grafikkarte aus, nur auf dem PC.</p>
-      <h2>Was an den gewählten KI-Anbieter geht</h2>
-      <p>Wählst du Claude (Anthropic), OpenAI, Grok (xAI) oder Gemini (Google), benutzt Buddy dessen API mit <b>deinem eigenen API-Key</b>. Der Key geht nur an diesen einen Anbieter. An ihn gehen nur:</p>
-      <ul>
-      <li>was du Buddy schreibst oder sagst, und seine Antworten,</li>
-      <li>Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst),</li>
-      <li>bei der <b>PC-Steuerung</b> (nur mit Claude) Bildschirmfotos deines Bildschirms. Buddy fragt vorher um Erlaubnis. Lass ihn nicht steuern, während Passwörter oder Privates offen sind.</li>
-      </ul>
-      <p>Wie der Anbieter diese Daten behandelt, steht in seiner Datenschutzerklärung für die API.</p>
-      <h2>Was nur auf deinem PC bleibt</h2>
-      <ul>
-      <li>Deine <b>API-Keys</b>, ein allfälliger <b>Hugging-Face-Token</b> und dein <b>Kalender-Link</b>: mit der Windows-Verschlüsselung (DPAPI) gespeichert.</li>
-      <li><b>Erkannte Tools</b>: Buddy prüft nur, ob Programme wie Claude Code, Codex oder Python installiert sind (Pfade und Versionen), nicht deren Inhalte. Die Protokolle von Claude Code und Codex liest er nur für die Nutzungsansicht, abschaltbar in den Einstellungen.</li>
-      <li><b>Musik-Visualizer</b>: Buddy liest nur den Pegel der Windows-Tonausgabe (wie der Lautstärkemixer). Es wird nichts aufgenommen oder gespeichert.</li>
-      <li><b>Chatverlauf</b>, <b>Einstellungen</b> und ein kurzes <b>Protokoll</b> für die Fehlersuche (ohne Chat-Inhalte) im Ordner <code>%APPDATA%\Buddy Island</code>.</li>
-      <li><b>Windows-Mitteilungen</b>, <b>«Läuft gerade»</b> (Musik) und <b>Termine</b>: Buddy liest sie nur, um sie im Island zu zeigen. Sie werden nicht dauerhaft gespeichert.</li>
-      <li><b>Spielmodus</b>: Buddy schaut nur, welches Programm im Vordergrund ist und ob Windows «Vollbild» meldet.</li>
-      </ul>
-      <h2>Sprache</h2>
-      <ul>
-      <li>«Hey Buddy» wird mit der eingebauten Windows-Spracherkennung <b>auf dem PC</b> erkannt.</li>
-      <li>Für das Diktat nutzt Buddy die Spracherkennung von Windows. Ist in Windows die <b>Online-Spracherkennung</b> eingeschaltet, verarbeitet Microsoft das Gesprochene. Sonst bleibt alles auf dem PC.</li>
-      <li>Vorlesen läuft mit den Windows-Stimmen auf dem PC.</li>
-      </ul>
-      <h2>Kalender</h2>
-      <p>Buddy lädt deinen privaten iCal-Link direkt bei deinem Kalenderanbieter (z. B. Google oder Microsoft), etwa alle 15 Minuten.</p>
-      <h2>Updates</h2>
-      <p>Buddy fragt bei GitHub nach neuen Versionen, sobald das Repository öffentlich ist. Dabei wird nur die Versionsdatei abgerufen.</p>
-      <h2>Löschen</h2>
-      <p>Deinstalliere Buddy über die Windows-Einstellungen und lösche den Ordner <code>%APPDATA%\Buddy Island</code>. Danach ist nichts mehr von Buddy auf deinem PC.</p>
+<h1>Datenschutz bei Buddy Island</h1>
+<p class="stand">Stand: November 2026</p>
+<p>Buddy Island ist ein privates Testprojekt von Wolf Widmer. Die App läuft vollständig auf deinem Windows-PC. Es gibt keine Server von Buddy Island, kein Konto, keine Werbung und keine Statistiken.</p>
+<h2>Lokale KI</h2>
+<p>Ohne API-Key läuft Buddy mit einem <strong>lokalen Modell</strong> (Hugging Face Transformers) auf deinem PC. Dann verlässt nichts von deinen Eingaben den PC. Nur beim Einrichten lädt Buddy Python (python.org bzw. Microsoft Store), Pakete (PyPI) und das Modell (Hugging Face) herunter. Für die Empfehlung liest Buddy Arbeitsspeicher, Prozessor und Grafikkarte aus, nur lokal.</p>
+<h2>Was an den gewählten KI-Anbieter geht</h2>
+<p>Mit Claude (Anthropic), OpenAI, Grok (xAI) oder Gemini (Google) benutzt Buddy dessen API mit <strong>deinem eigenen API-Key</strong>. Jeder Key geht nur an seinen Anbieter. An ihn gehen nur:</p>
+<ul>
+<li>was du Buddy schreibst oder sagst, und seine Antworten,</li>
+<li>Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst),</li>
+<li>bei der <strong>PC-Steuerung</strong> (nur mit Claude) Bildschirmfotos deines Bildschirms. Buddy fragt vorher um Erlaubnis. Lass ihn nicht steuern, während Passwörter oder Privates offen sind.</li>
+</ul>
+<p>Wie der Anbieter diese Daten behandelt, steht in seiner Datenschutzerklärung für die API.</p>
+<h2>Was nur auf deinem PC bleibt</h2>
+<ul>
+<li>Deine <strong>API-Keys</strong>, ein optionaler <strong>Hugging-Face-Token</strong>, optionale <strong>Admin-Keys</strong> (Anthropic, OpenAI) und dein <strong>Kalender-Link</strong>: mit der Windows-Verschlüsselung (DPAPI) gespeichert, nie im Protokoll. Jeder Key geht nur an den eigenen Anbieter.</li>
+<li><strong>Kostenstatistik</strong> (<code>usage.json</code>): nur Zahlen (Tokens, Kosten, Modell, Zeit), keine Inhalte.</li>
+<li><strong>Ausführungsverlauf</strong> (<code>history.json</code>): kurzer Titel der Aufgabe, Schritte, Modelle und Kosten, keine Antworten. Abschaltbar und löschbar in den Einstellungen.</li>
+<li><strong>Chatverlauf</strong>, <strong>Einstellungen</strong> und ein kurzes <strong>Protokoll</strong> für die Fehlersuche (ohne Chat-Inhalte) im Ordner <code>%APPDATA%\Buddy Island</code>.</li>
+<li><strong>Windows-Mitteilungen</strong>, <strong>«Läuft gerade»</strong> (Musik) und <strong>Termine</strong>: Buddy liest sie nur, um sie im Island zu zeigen. Sie werden nicht dauerhaft gespeichert.</li>
+<li><strong>Spielmodus</strong>: Buddy schaut nur, welches Programm im Vordergrund ist und ob Windows «Vollbild» meldet.</li>
+</ul>
+<h2>KI-Nutzung</h2>
+<ul>
+<li>Die Nutzungs-Ansicht liest auf Wunsch die <strong>Protokolldateien von Claude Code und Codex</strong> auf deinem PC (<code>.claude\projects</code>, <code>.codex\sessions</code>). Buddy zählt daraus Tokens, Werkzeuge und Fehler und zeigt den ersten Auftrag einer Sitzung als Titel. Die Dateien werden nur gelesen, nie verändert oder verschickt. Abschaltbar unter «Lokale Protokolle lesen».</li>
+<li>Für «Was läuft gerade?» schaut Buddy kurz in die <strong>Liste der laufenden Programme</strong>, um bekannte KI-Programme zu erkennen. Davon wird nichts gespeichert.</li>
+<li>Fragst du Buddy im Chat nach deiner Nutzung, geht die Zusammenfassung (inkl. der Sitzungstitel) an Claude, damit er antworten kann.</li>
+<li>Mit einem Admin-Key fragt Buddy die offiziellen Usage- und Cost-Schnittstellen von Anthropic bzw. OpenAI ab.</li>
+</ul>
+<h2>Erkennung und Visualizer</h2>
+<ul>
+<li>Buddy prüft, ob Programme wie Claude Code, Codex oder Python installiert sind (Pfade und Versionen, keine Inhalte).</li>
+<li>Für den Musik-Visualizer und den Bildschirmrand wertet Buddy den Ton aus, den Windows gerade abspielt (Lautstärke in Bass, Mitten und Höhen), und zwar nur, solange Windows eine Wiedergabe meldet. Das passiert ausschliesslich auf dem PC: Es wird nichts aufgenommen, gespeichert oder verschickt.</li>
+</ul>
+<h2>Sprache</h2>
+<ul>
+<li>«Hey Buddy» wird mit der eingebauten Windows-Spracherkennung <strong>auf dem PC</strong> erkannt.</li>
+<li>Für das Diktat nutzt Buddy die Spracherkennung von Windows. Ist in Windows die <strong>Online-Spracherkennung</strong> eingeschaltet, verarbeitet Microsoft das Gesprochene. Sonst bleibt alles auf dem PC.</li>
+<li>Vorlesen läuft mit den Windows-Stimmen auf dem PC.</li>
+</ul>
+<h2>Kalender</h2>
+<p>Buddy lädt deinen privaten iCal-Link direkt bei deinem Kalenderanbieter (z. B. Google oder Microsoft), etwa alle 15 Minuten.</p>
+<h2>Updates</h2>
+<p>Buddy fragt bei GitHub nach neuen Versionen und lädt sie über HTTPS. Installiert wird nur, wenn die Signatur und die Prüfsumme stimmen. Dabei werden keine Daten über dich verschickt.</p>
+<h2>Löschen</h2>
+<p>Deinstalliere Buddy über die Windows-Einstellungen und lösche den Ordner <code>%APPDATA%\Buddy Island</code>. Danach ist nichts mehr von Buddy auf deinem PC.</p>
+      <a class="doc-back" href="./">Zurück zur Startseite</a>
     </article>
   </main>
   <footer class="footer">
-    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · <a href="./">Zur Startseite</a></p>
+    <a class="brand dark" href="./"><span class="eyes" aria-hidden="true"><i></i><i></i></span><span>Buddy Island</span></a>
+    <ul class="footer-links">
+      <li><a href="./">Startseite</a></li>
+      <li><a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></li>
+    </ul>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

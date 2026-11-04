@@ -3,179 +3,344 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Buddy Island – dein Assistent oben am Bildschirm</title>
-  <meta name="description" content="Buddy Island ist ein KI-Assistent im Stil der Dynamic Island für Windows: Fragen, Timer, Musik mit Visualizer, Mitteilungen und auf Wunsch PC-Steuerung.">
-  <meta property="og:title" content="Buddy Island">
-  <meta property="og:description" content="Dein Claude-Assistent oben am Windows-Bildschirm.">
-  <meta property="og:image" content="https://wolfawidmer-sudo.github.io/buddy-island-website/img/og.png">
+  <title>Buddy Island – KI-Assistent für Windows, oben am Bildschirm</title>
+  <meta name="description" content="Buddy Island ist ein KI-Assistent für Windows 10 und 11, der als kleine Insel oben am Bildschirm wohnt: Fragen, Timer, Musik, Mitteilungen und auf Wunsch PC-Steuerung. Gratis mit lokaler KI oder mit Claude, OpenAI, Grok und Gemini.">
+  <link rel="canonical" href="https://wolfawidmer-sudo.github.io/buddy-island-website/">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#000000">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src https://api.github.com https://raw.githubusercontent.com">
+  <meta property="og:locale" content="de_CH">
+  <meta property="og:site_name" content="Buddy Island">
+  <meta property="og:title" content="Buddy Island – dein KI-Assistent oben am Bildschirm">
+  <meta property="og:description" content="Fragen, Timer, Musik und Mitteilungen in einer kleinen Insel oben in Windows. Gratis mit lokaler KI.">
+  <meta property="og:url" content="https://wolfawidmer-sudo.github.io/buddy-island-website/">
+  <meta property="og:image" content="https://wolfawidmer-sudo.github.io/buddy-island-website/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#edf0f4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src https://api.github.com https://raw.githubusercontent.com">
   <link rel="icon" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Buddy Island">
-      <span class="brand-pill"><i></i><i></i></span>
-      Buddy Island
-    </a>
-    <nav class="nav-links" aria-label="Seitennavigation">
-      <a href="#neu">Neu</a>
-      <a href="#funktionen">Funktionen</a>
-      <a href="#installation">Installation</a>
-      <a href="#datenschutz">Datenschutz</a>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <!-- Navigation: eine schwarze Insel, wie Buddy selbst -->
+  <header class="topbar">
+    <nav class="island-nav" id="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Buddy Island, zum Seitenanfang">
+        <span class="eyes" aria-hidden="true"><i></i><i></i></span>
+        <span>Buddy Island</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#funktionen">Funktionen</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#datenschutz">Datenschutz</a></li>
+        <li><a href="#fragen">Fragen</a></li>
+      </ul>
+      <a class="nav-download" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Download</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen"><i></i><i></i></button>
     </nav>
-    <a class="btn small" href="#download">Download</a>
   </header>
 
-  <main id="top">
+  <main id="inhalt">
     <!-- Hero -->
-    <section class="hero">
-      <p class="eyebrow"><span class="version-tag" data-version>Version 0.7.1</span> · Für Windows 10 &amp; 11</p>
-      <h1>Dein Assistent wohnt<br>oben am Bildschirm.</h1>
-      <p class="lead">Buddy wohnt als kleine Insel oben in der Mitte deines Bildschirms. Er beantwortet Fragen, stellt Timer und zeigt deine Musik und Nachrichten. Gratis und ohne Anmeldung.</p>
-      <div class="cta" id="download">
-        <a class="btn" id="downloadBtn" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest">
-          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9M6 9l4 4 4-4M4 16.5h12"/></svg>
+    <section class="hero" id="top">
+      <a class="release-pill" href="#neu"><span class="dot" aria-hidden="true"></span><span>Neu: <span data-version>Version 0.7.1</span></span></a>
+      <h1>Dein KI-Assistent wohnt oben am Bildschirm.</h1>
+      <p class="lead">Buddy Island ist eine kleine Insel oben in der Mitte von Windows. Frag die KI, stell Timer, steuer Musik und lies Mitteilungen, ohne ein Fenster zu öffnen. Auf Wunsch bedient Buddy sogar deinen PC.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 3.6 8.6 2.8v6.6H2.5zM9.4 2.7l8.1-1.2v7.9H9.4zM2.5 10.2h6.1v6.6l-6.1-.8zM9.4 10.2h8.1v7.9l-8.1-1.2z"/></svg>
           Für Windows herunterladen
         </a>
-        <p class="cta-note"><span id="downloadInfo">Gratis · ca. 120 MB</span> · ohne Anmeldung</p>
+        <a class="button secondary" href="#funktionen">Funktionen ansehen</a>
       </div>
+      <p class="fineprint"><span class="fp">Kostenlos für Windows 10 und 11</span><span class="sep" aria-hidden="true"></span><span class="fp"><span data-version>Version 0.7.1</span><span data-size></span></span><span class="sep" aria-hidden="true"></span><span class="fp">Lokale KI oder Claude, OpenAI, Grok, Gemini</span></p>
 
-      <!-- Vorschau: animiertes Island auf einem Bildschirm -->
-      <div class="screen" aria-label="Vorschau von Buddy Island auf einem Bildschirm">
-        <div class="wallpaper"></div>
-        <div class="window" aria-hidden="true">
-          <div class="win-bar"><span>Einkaufsliste – Editor</span><i></i><i></i><i></i></div>
-          <div class="win-body"><b></b><b></b><b></b><b></b><b></b></div>
+      <!-- Echte Bildschirmfotos von Buddy auf einem Bildschirm, nacheinander -->
+      <figure class="monitor hero-monitor" id="heroDemo">
+        <div class="screen">
+          <div class="wallpaper" aria-hidden="true"></div>
+          <div class="desk-window" aria-hidden="true"><div class="dw-bar"><span></span><i></i><i></i><i></i></div><div class="dw-body"><b></b><b></b><b></b><b></b></div></div>
+          <img class="edge" src="img/edge-glow.webp" alt="" aria-hidden="true" width="1920" height="1200">
+          <div class="demo-island" aria-hidden="true">
+            <img data-scene="idle" src="img/closed-idle.webp" alt="" width="224" height="72">
+            <img data-scene="music" src="img/closed-music.webp" alt="" width="336" height="72">
+            <img data-scene="notify" src="img/closed-notify.webp" alt="" width="592" height="108">
+            <img data-scene="timer" src="img/closed-timer.webp" alt="" width="224" height="72">
+            <img data-scene="open" class="open" src="img/open-ai.webp" alt="" width="1000" height="770">
+          </div>
+          <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
-        <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <!-- Rand: liegt wie in der App über allem, auch über der Taskleiste -->
-        <div class="glow" aria-hidden="true"><i class="g-haze"></i><i class="g-core"></i><i class="g-rim"></i></div>
-        <div class="island" id="demoIsland" data-state="idle">
-          <span class="d-face"><i></i><i></i></span>
-          <span class="d-cover"></span>
-          <span class="d-text">
-            <span class="d-small" id="demoSmall"></span>
-            <span class="d-label" id="demoLabel">Buddy</span>
-          </span>
-          <span class="d-meter"><i></i><i></i><i></i></span>
-          <span class="d-eq"><i></i><i></i><i></i><i></i></span>
-        </div>
-        <div class="cursor" id="demoCursor" aria-hidden="true"></div>
-      </div>
-      <p class="screen-caption" id="demoCaption">Im Ruhezustand zeigt Buddy nur seine Augen.</p>
+        <figcaption id="heroCaption" aria-live="polite">Im Ruhezustand zeigt Buddy nur seine Augen.</figcaption>
+      </figure>
     </section>
 
-    <!-- Neu: wird beim Laden aus der neusten Version auf GitHub gefüllt (whats-new.json) -->
-    <section class="section" id="neu">
-      <p class="kicker"><span data-version>Version 0.7.1</span><span id="newsDate"></span></p>
-      <h2>Neu in <span data-version-short>0.7</span>.</h2>
-      <div class="news" id="newsList">
-        <article class="news-item"><h3>Gemini wieder voll dabei</h3><p>Mit Google Gemini startet Buddy jetzt ohne Umwege. Er wählt von selbst die aktuellste Version, die dir zur Verfügung steht.</p></article>
-        <article class="news-item"><h3>Musik, die man sieht</h3><p>Die Balken im Island tanzen zu Bass, Mitten und Höhen deiner Musik. Ist sie pausiert, wird es ruhig.</p></article>
-        <article class="news-item"><h3>Ein Rand, der mitschwingt</h3><p>Der ganze Bildschirm leuchtet sanft in deiner Lieblingsfarbe und pulsiert im Takt.</p></article>
-        <article class="news-item"><h3>Immer Platz zum Schreiben</h3><p>Egal wie lang das Gespräch wird: Das Eingabefeld bleibt unten griffbereit.</p></article>
-        <article class="news-item"><h3>Einfachere Bedienung</h3><p>Aufgeräumter und klarer: Buddy zeigt nur noch, was für dich wichtig ist.</p></article>
-      </div>
-      <figure class="wide"><img src="img/glow.png" width="960" height="600" alt="Der Bildschirmrand leuchtet blau, auch über der Taskleiste"><figcaption>Dein Bildschirm leuchtet sanft im Takt deiner Musik, in deiner Lieblingsfarbe.</figcaption></figure>
-      <p class="more"><a href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen auf GitHub →</a></p>
-    </section>
-
-    <!-- Funktionen: nur das Wichtigste -->
-    <section class="section" id="funktionen">
-      <h2>Das Wichtigste, schön einfach.</h2>
-      <div class="features">
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8 8.5l2.8 6.6M16 8.5l-2.8 6.6M8.5 7h7"/></svg>
-          <h3>Deine KI, deine Wahl</h3>
-          <p>Gratis direkt auf deinem PC oder mit Claude, OpenAI, Grok und Gemini. Buddy sucht sich selbst die passende Stufe aus.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>
-          <h3>Alles auf einen Blick</h3>
-          <p>Timer, Termine und Nachrichten erscheinen oben, genau dort, wo du hinschaust.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
-          <h3>Musik zum Anschauen</h3>
-          <p>Cover, Steuerung und Balken, die im Takt deiner Lieblingssongs tanzen.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l5 15 2.5-6.5L19 10z"/></svg>
-          <h3>Hilft am PC mit</h3>
-          <p>Auf Wunsch klickt und tippt Buddy für dich. Er fragt immer zuerst und lässt sich jederzeit stoppen.</p>
-        </article>
-      </div>
-      <div class="gallery">
-        <figure><img src="img/music.png" width="560" height="668" alt="Buddy mit laufender Musik und Ideen, was du fragen kannst"><figcaption>Musik und Ideen</figcaption></figure>
-        <figure><img src="img/chat.png" width="560" height="668" alt="Buddy mit Timer und einer neuen Nachricht"><figcaption>Timer und Nachrichten</figcaption></figure>
-        <figure><img src="img/settings.png" width="560" height="668" alt="Einstellungen für Musik und Bildschirmrand"><figcaption>Einstellungen mit einem Klick</figcaption></figure>
+    <!-- Neu: wird aus dem neusten Release und whats-new.json im App-Repo gefüllt -->
+    <section class="section news-section" id="neu" aria-labelledby="neu-title">
+      <div class="news-panel">
+        <h2 id="neu-title">Neu in <span data-version-short>0.7</span></h2>
+        <p class="news-date"><span data-version>Version 0.7.1</span><span id="newsDate"></span></p>
+        <ul class="news" id="newsList">
+          <li><h3>Gemini wieder voll dabei</h3><p>Mit Google Gemini startet Buddy jetzt ohne Umwege. Er wählt von selbst die aktuellste Version, die dir zur Verfügung steht.</p></li>
+          <li><h3>Musik, die man sieht</h3><p>Die Balken im Island tanzen zu Bass, Mitten und Höhen deiner Musik. Ist sie pausiert, wird es ruhig.</p></li>
+          <li><h3>Ein Rand, der mitschwingt</h3><p>Der ganze Bildschirm leuchtet sanft in deiner Lieblingsfarbe und pulsiert im Takt.</p></li>
+          <li><h3>Immer Platz zum Schreiben</h3><p>Egal wie lang das Gespräch wird: Das Eingabefeld bleibt unten griffbereit.</p></li>
+          <li><h3>Einfachere Bedienung</h3><p>Aufgeräumter und klarer: Buddy zeigt nur noch, was für dich wichtig ist.</p></li>
+        </ul>
+        <a class="text-link" href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen auf GitHub</a>
       </div>
     </section>
 
-    <section class="section" id="installation">
-      <h2>In zwei Minuten startklar.</h2>
+    <!-- Funktionen: Reiter mit echten Bildschirmfotos -->
+    <section class="section" id="funktionen" aria-labelledby="funktionen-title">
+      <h2 id="funktionen-title">Was Buddy für dich macht</h2>
+      <p class="section-lead">Alles passiert oben in der Insel. Wähle einen Bereich und sieh dir an, wie es in der App aussieht.</p>
+
+      <div class="tabs" role="tablist" aria-label="Funktionen">
+        <button role="tab" id="tab-ki" aria-controls="panel-ki" aria-selected="true">KI-Chat</button>
+        <button role="tab" id="tab-alltag" aria-controls="panel-alltag" aria-selected="false" tabindex="-1">Timer &amp; Mitteilungen</button>
+        <button role="tab" id="tab-musik" aria-controls="panel-musik" aria-selected="false" tabindex="-1">Musik</button>
+        <button role="tab" id="tab-rand" aria-controls="panel-rand" aria-selected="false" tabindex="-1">Bildschirmrand</button>
+        <button role="tab" id="tab-pc" aria-controls="panel-pc" aria-selected="false" tabindex="-1">PC-Steuerung</button>
+        <button role="tab" id="tab-setup" aria-controls="panel-setup" aria-selected="false" tabindex="-1">Einstellungen</button>
+      </div>
+
+      <div class="panels">
+        <article class="panel" role="tabpanel" id="panel-ki" aria-labelledby="tab-ki">
+          <div class="panel-text">
+            <h3>Frag Buddy, was du wissen willst</h3>
+            <p>Lass dir etwas erklären, schreiben oder übersetzen. Buddy entscheidet selbst, wie viel Denkleistung eine Frage braucht, und antwortet in deiner Sprache.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen compact"><div class="wallpaper" aria-hidden="true"></div>
+              <img class="shot" src="img/open-ai.webp" width="1000" height="770" loading="lazy" alt="Buddy beantwortet die Frage, wie viel Arbeitsspeicher man zum Gamen braucht, mit einer Liste">
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Gratis mit lokaler KI auf deinem PC</li>
+            <li>Oder mit Claude, OpenAI, Grok und Gemini</li>
+            <li>Antwortet in deiner Sprache</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-alltag" aria-labelledby="tab-alltag" hidden>
+          <div class="panel-text">
+            <h3>Timer, Termine und Mitteilungen oben im Blick</h3>
+            <p>Sag einfach «Stell einen Timer für die Pizza». Neue Nachrichten erscheinen kurz oben statt unten rechts, Termine meldet Buddy rechtzeitig.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen compact"><div class="wallpaper" aria-hidden="true"></div>
+              <img class="shot" src="img/open-timer.webp" width="1000" height="962" loading="lazy" alt="Offenes Island mit einer WhatsApp-Mitteilung und einem laufenden Pizza-Timer">
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Timer mit einem Satz</li>
+            <li>WhatsApp, Mail &amp; Co. als kurze Vorschau</li>
+            <li>Termine aus Google oder Outlook</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-musik" aria-labelledby="tab-musik" hidden>
+          <div class="panel-text">
+            <h3>Deine Musik, immer zur Hand</h3>
+            <p>Cover, Titel und Steuerung erscheinen im Island. Die Balken bewegen sich nur, wenn wirklich Musik läuft, und folgen Bass, Mitten und Höhen.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen compact"><div class="wallpaper" aria-hidden="true"></div>
+              <img class="shot" src="img/open-music.webp" width="1000" height="650" loading="lazy" alt="Offenes Island mit laufendem Song, Steuerknöpfen und Vorschlägen">
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Spotify, YouTube und mehr</li>
+            <li>Pause und Weiter direkt im Island</li>
+            <li>Bleibt ruhig, wenn die Musik pausiert</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-rand" aria-labelledby="tab-rand" hidden>
+          <div class="panel-text">
+            <h3>Der Bildschirm leuchtet im Takt</h3>
+            <p>Läuft Musik, leuchtet der ganze Bildschirmrand sanft in deiner Farbe und pulsiert mit dem Bass. Klicks gehen einfach hindurch.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen screen-edge"><div class="wallpaper" aria-hidden="true"></div>
+              <div class="desk-window" aria-hidden="true"><div class="dw-bar"><span></span><i></i><i></i><i></i></div><div class="dw-body"><b></b><b></b><b></b><b></b></div></div>
+              <img class="edge on" src="img/edge-glow.webp" width="1920" height="1200" loading="lazy" alt="Der Bildschirmrand leuchtet blau rund um den ganzen Bildschirm, auch über der Taskleiste">
+              <img class="pill" src="img/closed-music.webp" width="336" height="72" loading="lazy" alt="">
+              <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Rund um den ganzen Bildschirm</li>
+            <li>Auch über der Taskleiste</li>
+            <li>In deiner Akzentfarbe</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-pc" aria-labelledby="tab-pc" hidden>
+          <div class="panel-text">
+            <h3>Buddy klickt und tippt für dich</h3>
+            <p>Sag, was zu tun ist, zum Beispiel «Öffne den Editor und schreib eine Einkaufsliste». Buddy fragt vorher um Erlaubnis und lässt sich jederzeit stoppen.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen"><div class="wallpaper" aria-hidden="true"></div>
+              <img class="shot" src="img/settings-control.webp" width="1000" height="1176" loading="lazy" alt="Einstellungen: Buddy darf den PC steuern, vor jeder Aufgabe fragen">
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Fragt vor jeder Aufgabe</li>
+            <li>Stopp per Tastenkürzel</li>
+            <li>Funktioniert mit Claude</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-setup" aria-labelledby="tab-setup" hidden>
+          <div class="panel-text">
+            <h3>Einstellen in wenigen Klicks</h3>
+            <p>Wähle die KI, füge falls nötig deinen Schlüssel ein und teste die Verbindung mit einem Klick. Den Rest stellt Buddy selbst ein.</p>
+          </div>
+          <figure class="monitor">
+            <div class="screen"><div class="wallpaper" aria-hidden="true"></div>
+              <img class="shot" src="img/settings-provider.webp" width="1000" height="1176" loading="lazy" alt="Einstellungen: KI-Anbieter wählen, API-Key einfügen, Verbindung testen">
+            </div>
+          </figure>
+          <ul class="facts">
+            <li>Lokal oder mit Claude, OpenAI, Grok, Gemini</li>
+            <li>Verbindungstest mit einem Klick</li>
+            <li>Schlüssel verschlüsselt auf deinem PC</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="section" id="installation" aria-labelledby="installation-title">
+      <h2 id="installation-title">In vier Schritten startklar</h2>
+      <p class="section-lead">Keine Anmeldung, kein Konto. Die Installation dauert etwa zwei Minuten.</p>
       <ol class="steps">
-        <li><span class="step-n">1</span><h3>Herunterladen</h3><p>Klick oben auf «Für Windows herunterladen».</p></li>
-        <li><span class="step-n">2</span><h3>Installieren</h3><p>Doppelklick auf die Datei. Falls Windows nachfragt: «Weitere Informationen» → «Trotzdem ausführen».</p></li>
-        <li><span class="step-n">3</span><h3>KI wählen</h3><p>Klick aufs Island und auf «Lokale KI einrichten». Oder nutze Claude, OpenAI, Grok oder Gemini.</p></li>
-        <li><span class="step-n">4</span><h3>Loslegen</h3><p>Mit <kbd>Strg</kbd> + <kbd>Umschalt</kbd> + <kbd>Leertaste</kbd> öffnest du Buddy überall. Updates kommen von selbst.</p></li>
+        <li>
+          <span class="step-n" aria-hidden="true">1</span>
+          <svg class="step-art" viewBox="0 0 120 72" aria-hidden="true"><rect x="22" y="8" width="76" height="56" rx="10" class="a-card"/><path d="M60 20v22M50 33l10 10 10-10" class="a-stroke"/><path d="M44 52h32" class="a-stroke"/></svg>
+          <h3>Herunterladen</h3>
+          <p>Klick auf «Für Windows herunterladen». Die Datei ist etwa 120 MB gross.</p>
+        </li>
+        <li>
+          <span class="step-n" aria-hidden="true">2</span>
+          <svg class="step-art" viewBox="0 0 120 72" aria-hidden="true"><rect x="14" y="6" width="92" height="60" rx="8" class="a-blue"/><rect x="22" y="16" width="44" height="5" rx="2.5" class="a-white"/><rect x="22" y="27" width="64" height="4" rx="2" class="a-white-dim"/><rect x="22" y="35" width="52" height="4" rx="2" class="a-white-dim"/><rect x="62" y="48" width="36" height="11" rx="3" class="a-white"/></svg>
+          <h3>Installieren</h3>
+          <p>Öffne die Datei. Warnt Windows, klick auf «Weitere Informationen» und dann auf «Trotzdem ausführen».</p>
+        </li>
+        <li>
+          <span class="step-n" aria-hidden="true">3</span>
+          <svg class="step-art" viewBox="0 0 120 72" aria-hidden="true"><rect x="16" y="8" width="88" height="56" rx="16" class="a-black"/><rect x="38" y="20" width="5" height="11" rx="2.5" class="a-white"/><rect x="47" y="20" width="5" height="11" rx="2.5" class="a-white"/><rect x="30" y="40" width="60" height="13" rx="6.5" class="a-white"/></svg>
+          <h3>KI wählen</h3>
+          <p>Klick oben aufs Island und auf «Lokale KI einrichten». Für Claude, OpenAI, Grok oder Gemini fügst du stattdessen deinen API-Key ein.</p>
+        </li>
+        <li>
+          <span class="step-n" aria-hidden="true">4</span>
+          <svg class="step-art" viewBox="0 0 120 72" aria-hidden="true"><rect x="34" y="10" width="52" height="18" rx="9" class="a-black"/><rect x="53" y="17" width="6" height="2.5" rx="1.2" class="a-white"/><rect x="62" y="17" width="6" height="2.5" rx="1.2" class="a-white"/><rect x="12" y="42" width="30" height="18" rx="5" class="a-card"/><rect x="46" y="42" width="30" height="18" rx="5" class="a-card"/><rect x="80" y="42" width="28" height="18" rx="5" class="a-card"/></svg>
+          <h3>Loslegen</h3>
+          <p>Öffne Buddy mit <kbd>Strg</kbd>+<kbd>Umschalt</kbd>+<kbd>Leertaste</kbd> oder klick aufs Island. Updates kommen von selbst.</p>
+        </li>
       </ol>
+      <p class="note">Ein <strong>API-Key</strong> ist ein Zugangsschlüssel, den du bei Anthropic, OpenAI, xAI oder Google erstellst. Du bezahlst dort nach Verbrauch. Ein Abo wie ChatGPT Plus enthält keinen API-Zugang. Mit der lokalen KI brauchst du keinen Key.</p>
     </section>
 
-    <section class="section" id="datenschutz">
-      <h2>Deine Daten bleiben bei dir.</h2>
-      <div class="privacy-grid">
-        <div class="card">
-          <h3>Kein Konto nötig</h3>
-          <p>Buddy läuft auf deinem PC. Keine Werbung, kein Tracking.</p>
-        </div>
-        <div class="card">
-          <h3>Sicher verwahrt</h3>
-          <p>Deine Zugangsdaten sind verschlüsselt auf deinem PC gespeichert. Die lokale KI schickt gar nichts weg.</p>
-        </div>
-        <div class="card">
-          <h3>Du hast die Kontrolle</h3>
-          <p>Deine Fragen gehen nur an den Anbieter, den du wählst. Auf deinen Bildschirm schaut Buddy nur, wenn du es erlaubst.</p>
-        </div>
+    <!-- Datenschutz -->
+    <section class="section" id="datenschutz" aria-labelledby="datenschutz-title">
+      <div class="privacy">
+        <h2 id="datenschutz-title">Deine Daten bleiben bei dir</h2>
+        <p class="section-lead">Buddy läuft auf deinem PC. Was wohin geht, entscheidest du.</p>
+        <ul class="privacy-list">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="11.5" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>
+            <h3>Kein Konto, keine Werbung</h3>
+            <p>Es gibt keine Buddy-Server, keine Anmeldung und keine Statistiken über dich.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6.5v5c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9v-5z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>
+            <h3>Lokale KI bleibt lokal</h3>
+            <p>Mit der lokalen KI verlässt nichts von deinen Fragen den PC.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="m8.3 10.9 7.4-2.8M8.3 13.1l7.4 2.8"/></svg>
+            <h3>Du wählst, wer antwortet</h3>
+            <p>Nutzt du Claude, OpenAI, Grok oder Gemini, geht deine Frage nur an diesen einen Anbieter.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>
+            <h3>Schlüssel sicher verwahrt</h3>
+            <p>API-Keys speichert Buddy mit der Windows-Verschlüsselung und schreibt sie nie ins Protokoll.</p>
+          </li>
+        </ul>
+        <a class="text-link light" href="privacy.html">Ganze Datenschutzerklärung lesen</a>
       </div>
-      <p class="more"><a href="privacy.html">Ganze Datenschutzerklärung lesen →</a></p>
     </section>
 
-    <section class="section" id="faq">
-      <h2>Fragen</h2>
+    <!-- Fragen -->
+    <section class="section" id="fragen" aria-labelledby="fragen-title">
+      <h2 id="fragen-title">Häufige Fragen</h2>
       <div class="faq">
-        <details id="faq-key">
-          <summary>Kostet Buddy etwas?</summary>
-          <p>Nein. Mit der lokalen KI ist Buddy komplett gratis. Wer noch klügere Antworten möchte, verbindet Claude, OpenAI, Grok oder Gemini und zahlt dort nur, was er braucht, meist wenige Rappen pro Gespräch.</p>
+        <details>
+          <summary>Ist Buddy Island kostenlos?</summary>
+          <div class="answer"><p>Ja. Buddy selbst kostet nichts, und mit der lokalen KI entstehen keine weiteren Kosten. Nutzt du Claude, OpenAI, Grok oder Gemini, bezahlst du beim jeweiligen Anbieter nach Verbrauch, meist wenige Rappen pro Gespräch.</p></div>
         </details>
         <details>
-          <summary>In welcher Sprache antwortet Buddy?</summary>
-          <p>In der Sprache deines Windows. Die Oberfläche gibt es auf Deutsch, Englisch und Französisch.</p>
+          <summary>Brauche ich einen API-Key?</summary>
+          <div class="answer"><p>Nur für Claude, OpenAI, Grok oder Gemini. Den Key erstellst du im Konto des Anbieters und fügst ihn in Buddys Einstellungen ein. Ein Abo wie ChatGPT Plus oder Claude Pro reicht dafür nicht. Die lokale KI läuft ganz ohne Key.</p></div>
         </details>
         <details>
-          <summary>Warum warnt Windows beim Installieren?</summary>
-          <p>Buddy ist ein junges Projekt und hat noch kein kostenpflichtiges Zertifikat. Darum fragt Windows beim ersten Start nach. Mit «Weitere Informationen» → «Trotzdem ausführen» geht es weiter.</p>
+          <summary>Welche KI-Anbieter werden unterstützt?</summary>
+          <div class="answer"><p>Claude (Anthropic), OpenAI, Grok (xAI) und Gemini (Google), jeweils mit eigenem API-Key, dazu lokale Modelle von Hugging Face. Die PC-Steuerung funktioniert nur mit Claude.</p></div>
         </details>
         <details>
-          <summary>Stört Buddy beim Gamen?</summary>
-          <p>Nein. Sobald ein Spiel oder ein Vollbild läuft, versteckt sich Buddy ganz.</p>
+          <summary>Kann ich KI-Modelle lokal nutzen?</summary>
+          <div class="answer"><p>Ja. Buddy prüft deinen PC, empfiehlt ein passendes Modell und richtet es mit einem Klick ein. Der erste Download ist etwa 1 bis 3 GB gross, danach läuft die KI ohne Internet. Mit einer Grafikkarte antwortet sie deutlich schneller.</p></div>
         </details>
         <details>
-          <summary>Wie entferne ich Buddy?</summary>
-          <p>Windows-Einstellungen → Apps → Buddy Island → Deinstallieren.</p>
+          <summary>Läuft Buddy auf Windows 10 und 11?</summary>
+          <div class="answer"><p>Ja, auf Windows 10 ab Version 1809 und auf Windows 11, jeweils in der 64-Bit-Version.</p></div>
+        </details>
+        <details>
+          <summary>Bremst Buddy meine Spiele?</summary>
+          <div class="answer"><p>Nein. Läuft ein Spiel oder eine Vollbild-App, versteckt sich Buddy ganz: keine Einblendungen, kein Ton und keine Musikanalyse. Verpasste Mitteilungen zeigt er danach.</p></div>
+        </details>
+        <details>
+          <summary>Wo werden meine Daten gespeichert?</summary>
+          <div class="answer"><p>Auf deinem PC im Ordner <code>%APPDATA%\Buddy Island</code>. API-Keys liegen dort verschlüsselt. An einen KI-Anbieter geht nur, was du Buddy fragst, und nur, wenn du einen gewählt hast.</p></div>
+        </details>
+        <details>
+          <summary>Wie deinstalliere ich Buddy?</summary>
+          <div class="answer"><p>In den Windows-Einstellungen unter Apps, Installierte Apps, Buddy Island, Deinstallieren. Wer alles entfernen will, löscht danach den Ordner <code>%APPDATA%\Buddy Island</code>.</p></div>
         </details>
       </div>
+    </section>
+
+    <!-- Abschluss -->
+    <section class="section closing" aria-labelledby="closing-title">
+      <img class="closing-island" src="img/closed-idle.webp" width="224" height="72" alt="" loading="lazy">
+      <h2 id="closing-title">Bereit für deinen Buddy?</h2>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 3.6 8.6 2.8v6.6H2.5zM9.4 2.7l8.1-1.2v7.9H9.4zM2.5 10.2h6.1v6.6l-6.1-.8zM9.4 10.2h8.1v7.9l-8.1-1.2z"/></svg>
+          Für Windows herunterladen
+        </a>
+      </div>
+      <p class="fineprint"><span class="fp">Kostenlos für Windows 10 und 11</span><span class="sep" aria-hidden="true"></span><span class="fp"><span data-version>Version 0.7.1</span><span data-size></span></span></p>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · <span data-version>Version 0.7.1</span></p>
-    <p>Funktioniert mit Claude, OpenAI, Grok und Gemini oder ganz lokal. Kein offizielles Produkt dieser Firmen, von Apple oder Microsoft.</p>
-    <p><a href="privacy.html">Datenschutz</a> · <a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></p>
+    <a class="brand dark" href="#top"><span class="eyes" aria-hidden="true"><i></i><i></i></span><span>Buddy Island</span></a>
+    <p>Ein Projekt von Wolf Widmer. Funktioniert mit Claude, OpenAI, Grok und Gemini oder ganz lokal. Kein offizielles Produkt dieser Firmen, von Apple oder Microsoft.</p>
+    <ul class="footer-links">
+      <li><a href="privacy.html">Datenschutz</a></li>
+      <li><a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></li>
+      <li><a href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen</a></li>
+    </ul>
   </footer>
 
   <script src="script.js"></script>
