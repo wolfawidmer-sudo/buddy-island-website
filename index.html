@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buddy Island – dein Assistent oben am Bildschirm</title>
-  <meta name="description" content="Buddy Island ist ein kleiner Claude-Assistent im Stil der Dynamic Island für Windows: Chat, Timer, Musik, Kalender, Mitteilungen, Sprache und PC-Steuerung.">
+  <meta name="description" content="Buddy Island ist ein KI-Assistent im Stil der Dynamic Island für Windows: Fragen, Timer, Musik mit Visualizer, Mitteilungen und auf Wunsch PC-Steuerung.">
   <meta property="og:title" content="Buddy Island">
   <meta property="og:description" content="Dein Claude-Assistent oben am Windows-Bildschirm.">
   <meta property="og:image" content="https://wolfawidmer-sudo.github.io/buddy-island-website/img/og.png">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#000000">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src https://api.github.com">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src https://api.github.com https://raw.githubusercontent.com">
   <link rel="icon" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
@@ -22,6 +22,7 @@
       Buddy Island
     </a>
     <nav class="nav-links" aria-label="Seitennavigation">
+      <a href="#neu">Neu</a>
       <a href="#funktionen">Funktionen</a>
       <a href="#installation">Installation</a>
       <a href="#datenschutz">Datenschutz</a>
@@ -32,15 +33,15 @@
   <main id="top">
     <!-- Hero -->
     <section class="hero">
-      <p class="eyebrow">Testversion 0.4 · Windows 10 & 11</p>
+      <p class="eyebrow"><span class="version-tag" data-version>Version 0.7.1</span> · Windows 10 &amp; 11</p>
       <h1>Dein Assistent wohnt<br>oben am Bildschirm.</h1>
-      <p class="lead">Buddy Island ist ein kleines Island oben in der Mitte deines Windows-Bildschirms. Fragen, Timer, Musik, Termine, Mitteilungen, und wenn du willst, bedient Buddy den PC für dich. Er läuft gratis mit einer lokalen KI auf deinem PC oder mit Claude, OpenAI, Grok oder Gemini.</p>
+      <p class="lead">Ein kleines Island oben in der Mitte von Windows: Fragen, Timer, Musik und Mitteilungen. Gratis mit lokaler KI oder mit Claude, OpenAI, Grok und Gemini.</p>
       <div class="cta" id="download">
         <a class="btn" id="downloadBtn" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest">
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9M6 9l4 4 4-4M4 16.5h12"/></svg>
           Für Windows herunterladen
         </a>
-        <p class="cta-note"><span id="downloadInfo">Gratis · ca. 120 MB</span> · läuft lokal ohne Konto, <a href="#faq-key">API-Key optional</a></p>
+        <p class="cta-note"><span id="downloadInfo">Gratis · ca. 120 MB</span> · ohne Konto, <a href="#faq-key">API-Key optional</a></p>
       </div>
 
       <!-- Vorschau: animiertes Island auf einem Bildschirm -->
@@ -50,7 +51,9 @@
           <div class="win-bar"><span>Einkaufsliste – Editor</span><i></i><i></i><i></i></div>
           <div class="win-body"><b></b><b></b><b></b><b></b><b></b></div>
         </div>
-        <div class="glow" aria-hidden="true"><i class="g-top"></i><i class="g-right"></i><i class="g-bottom"></i><i class="g-left"></i></div>
+        <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <!-- Rand: liegt wie in der App über allem, auch über der Taskleiste -->
+        <div class="glow" aria-hidden="true"><i class="g-haze"></i><i class="g-core"></i><i class="g-rim"></i></div>
         <div class="island" id="demoIsland" data-state="idle">
           <span class="d-face"><i></i><i></i></span>
           <span class="d-cover"></span>
@@ -62,145 +65,57 @@
           <span class="d-eq"><i></i><i></i><i></i><i></i></span>
         </div>
         <div class="cursor" id="demoCursor" aria-hidden="true"></div>
-        <div class="taskbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
       <p class="screen-caption" id="demoCaption">Im Ruhezustand zeigt Buddy nur seine Augen.</p>
     </section>
 
-    <!-- Funktionen -->
+    <!-- Neu: wird beim Laden aus der neusten Version auf GitHub gefüllt (whats-new.json) -->
+    <section class="section" id="neu">
+      <p class="kicker"><span data-version>Version 0.7.1</span><span id="newsDate"></span></p>
+      <h2>Neu in <span data-version-short>0.7</span>.</h2>
+      <div class="news" id="newsList">
+        <article class="news-item"><h3>Gemini wieder startklar</h3><p>Buddy nimmt automatisch die neuste Gemini-Version, die dein Konto anbietet. Modelle, die Google nicht mehr anbietet, überspringt er selbst.</p></article>
+        <article class="news-item"><h3>Visualizer, der wirklich zuhört</h3><p>Die Balken folgen Bass, Mitten und Höhen des echten Tons. Ist Spotify nur offen oder pausiert, bleibt alles ruhig.</p></article>
+        <article class="news-item"><h3>Leuchtender Rand im Takt</h3><p>Der Bildschirmrand leuchtet in deiner Akzentfarbe um den ganzen Bildschirm, auch über der Taskleiste, und pulsiert zur Musik.</p></article>
+        <article class="news-item"><h3>Eingabefeld immer sichtbar</h3><p>Egal wie lang die Unterhaltung wird: Das Eingabefeld bleibt unten, alles darüber scrollt für sich.</p></article>
+        <article class="news-item"><h3>Weniger Technik</h3><p>Modellnamen und Fehlercodes erscheinen nur noch auf Wunsch. Der Rand leuchtet nur, wenn Buddy wirklich länger deinen PC bedient.</p></article>
+      </div>
+      <figure class="wide"><img src="img/glow.png" width="960" height="600" alt="Bildschirmrand leuchtet in der Akzentfarbe, auch über der Taskleiste"><figcaption>Der Rand leuchtet in deiner Akzentfarbe um den ganzen Bildschirm und reagiert auf Bass, Mitten und Höhen.</figcaption></figure>
+      <p class="more"><a href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen auf GitHub →</a></p>
+    </section>
+
+    <!-- Funktionen: nur das Wichtigste -->
     <section class="section" id="funktionen">
-      <h2>Alles, was ein Assistent können sollte.</h2>
-      <p class="section-lead">Buddy braucht kein Konto bei uns. Er startet mit einer lokalen KI und nimmt auf Wunsch deinen eigenen API-Key.</p>
+      <h2>Das Wichtigste, schön einfach.</h2>
       <div class="features">
         <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M4.5 7.5l3 2M16.5 14.5l3 2M4.5 16.5l3-2M16.5 9.5l3-2"/><circle cx="12" cy="12" r="3"/></svg>
-          <h3>Automatische Modellwahl</h3>
-          <p>Ein kleines Modell prüft jede Anfrage und nimmt das günstigste, das reicht. Hakt es, wechselt Buddy selbst auf ein stärkeres.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h8"/><path d="M16 17l2 2 3-4"/></svg>
-          <h3>Plant und prüft</h3>
-          <p>Mehrstufige Aufgaben teilt Buddy in Schritte und meldet nichts als erledigt, was er nicht geprüft hat. Riskantes fragt er vorher.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V13M9 19V7M14 19v-8M19 19V4"/></svg>
-          <h3>KI-Nutzung im Blick</h3>
-          <p>Kosten, Tokens und Limits von Buddy, Claude Code, Codex und mehr. Was ein Anbieter nicht herausgibt, steht ehrlich als «nicht verfügbar».</p>
-        </article>
-        <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="17.5" r="2.5"/><path d="M8 8.5l2.8 6.6M16 8.5l-2.8 6.6M8.5 7h7"/></svg>
-          <h3>Deine Wahl der KI</h3>
-          <p>Claude, OpenAI, Grok, Gemini oder ein lokales Modell von Hugging Face. Was ein Modell nicht kann (z. B. Bildschirmfotos), sagt Buddy ehrlich.</p>
+          <h3>KI nach Wahl</h3>
+          <p>Gratis und offline mit einem lokalen Modell oder mit deinem Key für Claude, OpenAI, Grok oder Gemini. Buddy wählt das passende Modell selbst.</p>
         </article>
         <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4M8 9l2.5 2.5L8 14M13 14h3"/></svg>
-          <h3>Lokal und gratis</h3>
-          <p>Buddy prüft Arbeitsspeicher, Prozessor und Grafikkarte, empfiehlt das schnellste und das beste Modell und richtet es mit einem Klick ein. Danach läuft er ohne Internet.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z"/></svg>
-          <h3>Spricht deine Sprache</h3>
-          <p>Buddy übernimmt beim Start die Sprache von Windows: Oberfläche und Antworten kommen auf Deutsch, Englisch oder Französisch.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M8 10.5h5M10.5 8v5"/></svg>
-          <h3>Erkennt deine Tools</h3>
-          <p>Claude Code, Codex, ChatGPT, Gemini CLI und lokale Laufzeiten findet Buddy selbst. Was nicht installiert ist, taucht in Buddy gar nicht erst auf.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l5 15 2.5-6.5L19 10z"/></svg>
-          <h3>PC-Steuerung</h3>
-          <p>«Öffne den Editor und schreib eine Einkaufsliste.» Buddy fragt vorher und bedient dann Maus und Tastatur (mit Claude).</p>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>
+          <h3>Alltag im Blick</h3>
+          <p>Timer, Termine und Mitteilungen erscheinen oben im Island statt unten rechts.</p>
         </article>
         <article class="feature">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
           <h3>Musik mit Visualizer</h3>
-          <p>Spotify oder YouTube erscheinen mit Cover im Island, die Balken folgen dem echten Systemton. Pause und Weiter direkt dort.</p>
+          <p>Cover und Steuerung im Island, Balken und Bildschirmrand folgen dem echten Ton.</p>
         </article>
         <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg>
-          <h3>Kalender</h3>
-          <p>Mit einem iCal-Link aus Google oder Outlook erinnert Buddy dich kurz vor Terminen.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>
-          <h3>Mitteilungen im Island</h3>
-          <p>WhatsApp, Mail und Discord erscheinen kurz als Vorschau oben statt unten rechts.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M6 11.5a6 6 0 0 0 12 0M12 17.5v3"/></svg>
-          <h3>«Hey Buddy»</h3>
-          <p>Sprich mit Buddy über das Mikrofon, ein Tastenkürzel oder das Wake-Word. Antworten liest er vor.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9h10a4 4 0 0 1 4 4v1.5a3.5 3.5 0 0 1-6.3 2.1L13.5 15h-3l-1.2 1.6A3.5 3.5 0 0 1 3 14.5V13a4 4 0 0 1 4-4z"/><path d="M8 11.5v3M6.5 13h3M16 12.5h.01M18 14h.01"/></svg>
-          <h3>Spielmodus</h3>
-          <p>Läuft ein Spiel oder Vollbild, verschwindet Buddy komplett. Verpasstes zeigt er danach.</p>
-        </article>
-        <article class="feature">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"/></svg>
-          <h3>Eigene Kurzbefehle</h3>
-          <p>Lege feste Aufträge auf eine Taste, zum Beispiel <kbd>F9</kbd> → «Pausier die Musik».</p>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l5 15 2.5-6.5L19 10z"/></svg>
+          <h3>Bedient deinen PC</h3>
+          <p>Auf Wunsch übernimmt Buddy Maus und Tastatur. Er fragt vorher und lässt sich jederzeit stoppen.</p>
         </article>
       </div>
-    </section>
-
-    <!-- Bilder -->
-    <!-- Neu: Vorschauen aus HTML und CSS, gleiche Kurven wie in der App -->
-    <section class="section" id="neu">
-      <h2>Neu in Version 0.7.</h2>
-      <p class="section-lead">Ein Visualizer, der wirklich zuhört, ein Bildschirmrand, der zur Musik leuchtet, und ein Eingabefeld, das immer sichtbar bleibt.</p>
-      <div class="mocks">
-        <figure class="mock">
-          <div class="mock-screen" aria-hidden="true">
-            <div class="m-island m-notch" id="mockNotch"><span class="m-eyes"><i></i><i></i></span></div>
-            <span class="m-hint" id="mockNotchHint">Nach oben ziehen</span>
-          </div>
-          <figcaption><b>Notch-Modus.</b> Zieh das Island nach oben: Es wird zu einer tiefschwarzen Kerbe am Bildschirmrand, ohne Schatten und ohne Spalt. Nach unten ziehen oder klicken holt es zurück.</figcaption>
-        </figure>
-        <figure class="mock">
-          <div class="mock-screen" aria-hidden="true">
-            <div class="m-music">
-              <span class="m-cover"></span>
-              <span class="m-track"><b>Blinding Lights</b><small>The Weeknd</small></span>
-              <span class="m-bars" id="mockBars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            </div>
-          </div>
-          <figcaption><b>Musik mit Visualizer.</b> Cover und Titel im Island. Die Balken folgen Bass, Mitten und Höhen des echten Tons. Ist Spotify nur offen oder pausiert, bleibt alles ruhig. Es wird nichts aufgenommen.</figcaption>
-        </figure>
-        <figure class="mock">
-          <div class="mock-screen mock-settings" aria-hidden="true">
-            <div class="m-panel">
-              <div class="m-tabs"><span class="on">Provider</span><span>Tools</span><span>Audio &amp; Visuals</span><span>System</span></div>
-              <p class="m-h">Provider &amp; API-Keys</p>
-              <div class="m-group">
-                <div class="m-row"><span>Anbieter</span><span class="m-select" id="mockProvider">Lokal (Hugging Face)</span></div>
-                <div class="m-row"><span>Lokales Modell</span><span class="m-val" id="mockModel">Qwen2.5 3B · bereit</span></div>
-              </div>
-              <div class="m-group m-reco">
-                <div class="m-row"><span>Am schnellsten</span><span class="m-val">Qwen2.5 1.5B</span></div>
-                <div class="m-row"><span>Beste Antworten</span><span class="m-val">Qwen2.5 3B</span></div>
-              </div>
-            </div>
-          </div>
-          <figcaption><b>Neue Einstellungen.</b> Vier klare Bereiche, Anbieter per Auswahl, Empfehlung für deinen PC. Erkannte Tools erscheinen nur, wenn sie installiert sind.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section shots">
-      <h2>Ruhig, klar, ohne Ablenkung.</h2>
-      <p class="section-lead">Im Leerlauf läuft keine einzige Animation. CPU und GPU bleiben praktisch bei 0 %.</p>
       <div class="gallery">
-        <figure><img src="img/music.png" alt="Offenes Island mit laufender Musik und Vorschlägen"><figcaption>Musik und Vorschläge</figcaption></figure>
-        <figure><img src="img/chat.png" alt="Chat mit Timer und Mitteilungen"><figcaption>Timer und Mitteilungen</figcaption></figure>
-        <figure><img src="img/confirm.png" alt="Buddy fragt, ob er den PC steuern darf"><figcaption>Fragt vor dem Steuern</figcaption></figure>
-        <figure><img src="img/settings.png" alt="Einstellungen mit den Bereichen Provider, Tools, Audio &amp; Visuals und System"><figcaption>Einstellungen mit Anbieter-Wahl</figcaption></figure>
+        <figure><img src="img/music.png" width="560" height="348" alt="Offenes Island mit laufender Musik und Vorschlägen"><figcaption>Musik und Vorschläge</figcaption></figure>
+        <figure><img src="img/chat.png" width="560" height="504" alt="Chat mit Timer und Mitteilung"><figcaption>Timer und Mitteilungen</figcaption></figure>
+        <figure><img src="img/settings.png" width="560" height="610" alt="Einstellungen für Musik, Visualizer und Bildschirmrand"><figcaption>Einfache Einstellungen</figcaption></figure>
       </div>
-      <figure class="wide"><img src="img/glow.png" alt="Bildschirmrand leuchtet in der Akzentfarbe, auch über der Taskleiste"><figcaption>Der Rand leuchtet in deiner Akzentfarbe um den ganzen Bildschirm, im Takt der Musik oder wenn Buddy länger als 3 Sekunden den PC bedient.</figcaption></figure>
     </section>
 
-    <!-- Installation -->
     <section class="section" id="installation">
       <h2>In zwei Minuten startklar.</h2>
       <ol class="steps">
@@ -223,7 +138,6 @@
       </ol>
     </section>
 
-    <!-- Datenschutz -->
     <section class="section" id="datenschutz">
       <h2>Deine Daten bleiben bei dir.</h2>
       <div class="privacy-grid">
@@ -243,7 +157,6 @@
       <p class="more"><a href="privacy.html">Ganze Datenschutzerklärung lesen →</a></p>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
       <h2>Fragen</h2>
       <div class="faq">
@@ -252,20 +165,12 @@
           <p>Nein. Ohne Key läuft Buddy mit einem lokalen Modell gratis auf deinem PC. Ein Key von Claude, OpenAI, xAI (Grok) oder Google (Gemini) macht die Antworten klüger und ist nötig für die PC-Steuerung (nur Claude). Du bezahlst beim Anbieter nur, was du brauchst, meist wenige Rappen pro Unterhaltung.</p>
         </details>
         <details>
-          <summary>Welches lokale Modell passt zu meinem PC?</summary>
-          <p>Buddy misst Arbeitsspeicher, Prozessor und Grafikkarte und schlägt zwei Modelle vor: das schnellste und das mit den besten Antworten. Mit einer NVIDIA-Grafikkarte laufen auch grössere Modelle flüssig, sonst sind kleine Modelle wie Qwen2.5 1.5B die beste Wahl. Der erste Download braucht etwa 1 bis 3 GB.</p>
-        </details>
-        <details>
           <summary>In welcher Sprache antwortet Buddy?</summary>
           <p>In der Sprache von Windows. Die Oberfläche gibt es auf Deutsch, Englisch und Französisch, für andere Sprachen ist sie englisch, die Antworten kommen trotzdem in deiner Sprache. In den Einstellungen kannst du die Sprache auch fest wählen.</p>
         </details>
         <details>
           <summary>Warum warnt Windows beim Installieren?</summary>
           <p>Programme ohne kostenpflichtiges Signatur-Zertifikat zeigen beim ersten Start eine SmartScreen-Warnung. Buddy ist ein Testprojekt und deshalb noch nicht signiert.</p>
-        </details>
-        <details>
-          <summary>Gibt es Buddy für den Mac?</summary>
-          <p>Noch nicht. Buddy ist im Moment nur für Windows 10 und 11.</p>
         </details>
         <details>
           <summary>Stört Buddy beim Gamen?</summary>
@@ -280,7 +185,7 @@
   </main>
 
   <footer class="footer">
-    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · Version 0.7.0</p>
+    <p>Buddy Island ist ein Testprojekt von Wolf Widmer · <span data-version>Version 0.7.1</span></p>
     <p>Nutzt die offiziellen APIs von Anthropic, OpenAI, xAI und Google oder lokale Modelle über Hugging Face Transformers. Kein offizielles Produkt dieser Firmen, von Apple oder Microsoft.</p>
     <p><a href="privacy.html">Datenschutz</a> · <a href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode auf GitHub</a></p>
   </footer>
