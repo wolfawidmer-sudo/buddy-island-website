@@ -2,7 +2,7 @@
 
 Die Website von [Buddy Island](https://github.com/wolfawidmer-sudo/buddy-island), einem kleinen Claude-Assistenten im Stil der Dynamic Island für Windows.
 
-**Live:** https://wolfawidmer-sudo.github.io/buddy-island-website/
+**Live:** https://buddy-island.top/
 
 ## Aufbau
 
