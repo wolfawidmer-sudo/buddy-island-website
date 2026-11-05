@@ -67,8 +67,7 @@ nav { margin-left: auto; }
 
 /* Bühne: die Oberkante eines Bildschirms, die Insel hängt in der Mitte */
 .stage { margin: 64px 0 0; }
-.stage-screen { position: relative; background: #1d2026; border-radius: 16px 16px 0 0; padding: 18px 20px 0; overflow: hidden; display: flex; justify-content: center; }
-.stage-screen::before { content: ""; position: absolute; inset: 0; background: linear-gradient(#262a31, #1d2026 70%); }
+.stage-screen { position: relative; display: flex; justify-content: center; }
 .stage-island { position: relative; width: min(560px, 100%); }
 .stage figcaption, figure figcaption { margin-top: 12px; font-size: 14px; color: var(--ink-3); }
 figure { margin: 0; }
@@ -149,7 +148,6 @@ figure { margin: 0; }
   .hero { padding-top: 48px; }
   .lead { font-size: 17px; }
   .block { padding-top: 64px; }
-  .stage-screen { padding: 10px 10px 0; border-radius: 12px 12px 0 0; }
   .install { grid-template-columns: 1fr; gap: 20px; }
   .facts { grid-template-columns: 1fr; }
   .facts dd { border-top: 0; padding-top: 0; }
