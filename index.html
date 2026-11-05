@@ -50,11 +50,11 @@
         <a class="btn" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Für Windows herunterladen</a>
         <a class="link" href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode ansehen</a>
       </div>
-      <p class="meta"><span data-version>Neuste Version</span><span data-size></span> · kostenlos · MIT-Lizenz</p>
+      <p class="meta"><span data-version>Version 0.11.0</span><span data-size></span> · kostenlos · MIT-Lizenz</p>
 
       <figure class="stage">
         <div class="stage-screen">
-          <img class="stage-island" src="img/chat-code.webp" width="1000" height="796" alt="Das geöffnete Buddy-Island oben am Bildschirm: Buddy schreibt eine JavaScript-Funktion, der Code ist farbig hervorgehoben.">
+          <img class="stage-island" src="img/chat-code.webp" width="1000" height="768" alt="Das geöffnete Buddy-Island oben am Bildschirm: Buddy schreibt eine JavaScript-Funktion, der Code ist farbig hervorgehoben.">
         </div>
         <figcaption>Die Insel geöffnet: eine Frage, eine Antwort mit hervorgehobenem Code. Geschlossen zeigt sie nur zwei Augen.</figcaption>
       </figure>
@@ -68,14 +68,14 @@
             <h3>Fragen und schreiben</h3>
             <p>Lass dir etwas erklären, einen Text formulieren oder Code schreiben. Antworten erscheinen Wort für Wort, Code ist hervorgehoben und mit einem Klick kopiert. Gefällt eine Antwort nicht, lässt du sie neu schreiben.</p>
           </div>
-          <img class="shot" src="img/open-ai.webp" width="1000" height="770" loading="lazy" alt="Buddy beantwortet die Frage, wie viel Arbeitsspeicher man zum Gamen braucht.">
+          <img class="shot" src="img/open-ai.webp" width="1000" height="660" loading="lazy" alt="Buddy beantwortet die Frage, wie viel Arbeitsspeicher man zum Gamen braucht.">
         </article>
         <article class="row">
           <div class="row-text">
             <h3>Kleines für den Alltag</h3>
             <p>«Stell einen Timer für die Pizza» genügt. Windows-Mitteilungen erscheinen kurz oben in der Insel, Termine aus deinem Kalender meldet Buddy rechtzeitig, und die laufende Musik steuerst du direkt dort.</p>
           </div>
-          <img class="shot" src="img/open-timer.webp" width="1000" height="806" loading="lazy" alt="Die Insel mit einer WhatsApp-Mitteilung und einem laufenden Pizza-Timer.">
+          <img class="shot" src="img/open-timer.webp" width="1000" height="734" loading="lazy" alt="Die Insel mit einer WhatsApp-Mitteilung und einem laufenden Pizza-Timer.">
         </article>
         <article class="row">
           <div class="row-text">
@@ -118,7 +118,7 @@
           <p class="small">Modelle, die nicht in deinen Speicher passen, kann Buddy mit <a href="https://github.com/JustVugg/colibri">Colibrì</a> laufen lassen. Das ist langsamer, weil Teile von der SSD kommen. Buddy schlägt es nur vor, wenn Ollama nicht reicht.</p>
         </div>
         <figure>
-          <img class="shot" src="img/local-setup.webp" width="1000" height="824" loading="lazy" alt="Ersteinrichtung in der Insel: Buddy zeigt den PC, ein empfohlenes Modell mit Download-Grösse und den Knopf Einrichten.">
+          <img class="shot" src="img/local-setup.webp" width="1000" height="964" loading="lazy" alt="Ersteinrichtung in der Insel: Buddy zeigt den PC, ein empfohlenes Modell mit Download-Grösse und den Knopf Einrichten.">
           <figcaption>Beispiel auf einem PC mit 12 GB Grafikspeicher. Was Buddy vorschlägt, hängt von deinem PC ab.</figcaption>
         </figure>
       </div>
@@ -135,9 +135,12 @@
     </section>
 
     <section class="block wrap" id="neu" aria-labelledby="neu-t">
-      <h2 id="neu-t">Neu in <span data-version>der neusten Version</span></h2>
+      <h2 id="neu-t">Neu in <span data-version>Version 0.11.0</span></h2>
       <ul class="news" id="newsList">
-        <li><h3>Lokale KI mit einem Klick</h3><p>Buddy prüft deinen PC, empfiehlt ein passendes Modell und richtet es ein.</p></li>
+        <li><h3>Ein ruhigeres Aussehen</h3><p>Buddy ist jetzt offen wie geschlossen eine schwarze Insel. Weniger Kästen, mehr Ruhe: Inhalte stehen direkt da, und Buddys Augen zeigen, was gerade aktiv ist.</p></li>
+        <li><h3>Leichter zu lesen</h3><p>Eine neue Schrift, gemacht für gute Lesbarkeit, auch bei kleinen Texten. Sie ist in Buddy eingebaut und braucht kein Internet.</p></li>
+        <li><h3>Hell oder dunkel</h3><p>Unter Einstellungen › Erscheinungsbild wählst du Dunkel, Hell oder wie Windows. Geschlossen bleibt die Insel immer schwarz.</p></li>
+        <li><h3>Neue Farbe «Lagune»</h3><p>Buddys neue Standardfarbe für die Augen. Jede Akzentfarbe bleibt jetzt in Hell und Dunkel gut lesbar.</p></li>
       </ul>
       <a class="link" href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen auf GitHub</a>
     </section>
@@ -165,6 +168,7 @@
         <details id="faq-local"><summary>Wie schnell ist die lokale KI?</summary><p>Das hängt vom PC ab. Mit einer Grafikkarte, in die das Modell passt, antwortet sie flüssig; nur mit dem Prozessor deutlich langsamer. Buddy zeigt vor dem Download eine grobe Einschätzung und kann das Tempo auf deinem PC messen.</p></details>
         <details id="faq-colibri"><summary>Was ist Colibrì?</summary><p>Ein eigenständiges Open-Source-Programm, das sehr grosse Modelle laufen lässt, indem es Teile von der SSD liest. Buddy nutzt es nur für Modelle, die mit Ollama nicht in den Speicher passen, und sagt dir das. Es ist dann langsamer.</p></details>
         <details id="faq-screen"><summary>Sieht Buddy ständig meinen Bildschirm?</summary><p>Nein. Nur während einer Aufgabe, für die du ihm die PC-Steuerung erlaubt hast. Solange er hinschaut, leuchtet der Bildschirmrand; ohne diesen Rand nimmt er nichts auf. Läuft ein Spiel, pausiert er.</p></details>
+        <details id="faq-theme"><summary>Gibt es Buddy auch hell?</summary><p>Ja. Unter Einstellungen → Erscheinungsbild wählst du Dunkel, Hell oder wie Windows. Geschlossen bleibt die Insel immer schwarz, die Augen haben deine Akzentfarbe.</p></details>
         <details id="faq-games"><summary>Stört Buddy beim Spielen?</summary><p>Läuft ein Spiel im Vordergrund, blendet Buddy sich aus: keine Einblendungen, kein Ton, keine Steuerung. Verpasste Mitteilungen siehst du danach.</p></details>
         <details id="faq-windows"><summary>Welche Windows-Versionen?</summary><p>Windows 10 ab Version 1809 und Windows 11, jeweils 64 Bit. Die lokale KI mit Ollama braucht Windows 10 22H2 oder neuer.</p></details>
         <details id="faq-remove"><summary>Wie entferne ich Buddy?</summary><p>Windows-Einstellungen → Apps → Installierte Apps → Buddy Island → Deinstallieren. Für alles den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Ollama und Colibrì sind eigene Programme und bleiben, bis du sie entfernst.</p></details>
