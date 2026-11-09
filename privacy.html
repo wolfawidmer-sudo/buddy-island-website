@@ -22,7 +22,7 @@
       <nav aria-label="Hauptnavigation">
         <ul class="nav">
           <li><a href="./#kann">Funktionen</a></li>
-          <li><a href="./#ki">KI</a></li>
+          <li><a href="./#preise">Preise</a></li>
           <li><a href="./#start">Installation</a></li>
           <li><a href="./#fragen">Fragen</a></li>
         </ul>
@@ -35,27 +35,14 @@
 <h1>Datenschutz bei Buddy Island</h1>
 <p class="stand">Stand: 9. November 2026</p>
 <p>Buddy Island ist ein Projekt von Wolf Widmer, Grabenpromenade 1, 3011 Bern (<a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a>). Er ist für die Bearbeitung deiner Daten verantwortlich.</p>
-<p>Die App läuft auf deinem Windows-PC. Ohne <strong>Buddy Cloud</strong> gibt es kein Konto und keine Server von Buddy Island, und es werden keine Daten an uns geschickt. Werbung und Statistiken gibt es nie.</p>
-<h2>Lokale KI</h2>
-<p>Mit der <strong>lokalen KI</strong> läuft das Modell über <strong>Colibrì</strong> (grosse Modelle, wo immer es geht) oder <strong>Ollama</strong> auf deinem PC. Deine Nachrichten gehen nur an dieses Programm auf deinem PC (Adresse 127.0.0.1, von aussen nicht erreichbar) und an keinen KI-Anbieter.</p>
-<p>Aus dem Internet geladen wird nur, was du in Buddy bestätigst: das Installationsprogramm von Ollama (ollama.com, Buddy prüft vorher die digitale Signatur), Colibrì (GitHub, Buddy prüft die veröffentlichte Prüfsumme), die Modelle (Ollama-Registry bzw. Hugging Face) sowie eine Liste empfohlener Modelle und deren Grösse. Dabei werden keine Inhalte und keine Hardware-Daten verschickt. Für die Empfehlung liest Buddy Prozessor, Arbeitsspeicher, Grafikkarte, Treiberversion, Laufwerksart und freien Speicherplatz aus, nur lokal. Ältere Einrichtungen mit Hugging Face Transformers funktionieren weiter wie bisher.</p>
-<h2>Bildschirm</h2>
-<p>Buddy nimmt deinen Bildschirm nur auf, während er eine Aufgabe mit PC-Steuerung ausführt, die du erlaubt hast. Solange er das tut, leuchtet eine Linie am Bildschirmrand; ohne diese Linie nimmt er nichts auf. Die Bildschirmfotos gehen nur an Claude (die PC-Steuerung gibt es nur dort) und werden nicht gespeichert. Läuft ein Spiel, pausiert die Aufnahme.</p>
-<h2>Was an den gewählten KI-Anbieter geht</h2>
-<p>Mit Claude (Anthropic), OpenAI, Grok (xAI) oder Gemini (Google) benutzt Buddy dessen API mit <strong>deinem eigenen API-Key</strong>. Jeder Key geht nur an seinen Anbieter. An ihn gehen nur:</p>
+<p>Die App läuft auf deinem Windows-PC. Die Antworten kommen ab Version 0.13 über <strong>Buddy Cloud</strong>, dafür brauchst du ein Konto. Werbung und Statistiken gibt es nie.</p>
+<h2>Buddy Cloud</h2>
+<p>Für Buddy Cloud bearbeiten wir folgende Daten:</p>
 <ul>
-<li>was du Buddy schreibst oder sagst, und seine Antworten,</li>
-<li>Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst),</li>
-<li>bei der <strong>PC-Steuerung</strong> (nur mit Claude) Bildschirmfotos deines Bildschirms. Buddy fragt vorher um Erlaubnis. Lass ihn nicht steuern, während Passwörter oder Privates offen sind.</li>
-</ul>
-<p>Wie der Anbieter diese Daten behandelt, steht in seiner Datenschutzerklärung für die API.</p>
-<h2>Buddy Cloud (nur mit Konto)</h2>
-<p>Buddy Cloud ist freiwillig. Nutzt du es, bearbeiten wir folgende Daten:</p>
-<ul>
-<li><strong>Konto:</strong> E-Mail-Adresse, Passwort (nur verschlüsselt gespeichert), optional dein Name. Bei «Mit Google fortfahren» zusätzlich Name, E-Mail und Profilbild-Adresse von Google.</li>
+<li><strong>Konto:</strong> E-Mail-Adresse, Passwort (nur verschlüsselt gespeichert), optional dein Name. Bei «Mit Google anmelden» zusätzlich Name, E-Mail und Profilbild-Adresse von Google.</li>
 <li><strong>Guthaben und Käufe:</strong> Buddy Credits, Käufe, Abo-Status, Rückbuchungen. Kartendaten sehen wir nie; die verarbeitet nur Stripe.</li>
 <li><strong>Nutzung:</strong> pro Anfrage Zeitpunkt, Modell, Anzahl Tokens und verbrauchte Credits. Keine Inhalte.</li>
-<li><strong>Inhalte deiner Anfragen:</strong> Was du Buddy Cloud schreibst (inklusive Bilder und Werkzeug-Ergebnisse), geht über unseren Server an OpenAI und die Antwort zurück an dich. Unser Server speichert diese Inhalte nicht, und wir bitten OpenAI, sie nicht zu speichern (<code>store: false</code>). Wie OpenAI API-Daten behandelt, steht in deren Datenschutzerklärung.</li>
+<li><strong>Inhalte deiner Anfragen:</strong> Was du Buddy schreibst oder sagst, und die Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst), gehen über unseren Server an OpenAI und die Antwort zurück an dich. Unser Server speichert diese Inhalte nicht, und wir bitten OpenAI, sie nicht zu speichern (<code>store: false</code>). Wie OpenAI API-Daten behandelt, steht in deren Datenschutzerklärung.</li>
 <li><strong>Technische Protokolle:</strong> Zeit, Adresse der Anfrage, Status, ohne Inhalte und ohne Passwörter oder Schlüssel. Deine IP-Adresse wird nur kurz im Arbeitsspeicher gehalten, um Missbrauch zu bremsen.</li>
 <li>Auf deinem PC speichert Buddy deine Anmeldung verschlüsselt (Windows DPAPI).</li>
 </ul>
@@ -73,25 +60,14 @@
 <p><strong>Deine Rechte:</strong> Du kannst Auskunft über deine Daten verlangen, sie berichtigen oder löschen lassen. Schreib an <a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a>.</p>
 <h2>Was nur auf deinem PC bleibt</h2>
 <ul>
-<li>Deine <strong>API-Keys</strong>, ein optionaler <strong>Hugging-Face-Token</strong>, optionale <strong>Admin-Keys</strong> (Anthropic, OpenAI) und dein <strong>Kalender-Link</strong>: mit der Windows-Verschlüsselung (DPAPI) gespeichert, nie im Protokoll. Jeder Key geht nur an den eigenen Anbieter.</li>
-<li><strong>Kostenstatistik</strong> (<code>usage.json</code>): nur Zahlen (Tokens, Kosten, Modell, Zeit), keine Inhalte.</li>
-<li><strong>Ausführungsverlauf</strong> (<code>history.json</code>): kurzer Titel der Aufgabe, Schritte, Modelle und Kosten, keine Antworten. Abschaltbar und löschbar in den Einstellungen.</li>
-<li><strong>Chatverlauf</strong>, <strong>Einstellungen</strong> und ein kurzes <strong>Protokoll</strong> für die Fehlersuche (ohne Chat-Inhalte) im Ordner <code>%APPDATA%\Buddy Island</code>.</li>
+<li>Dein <strong>Kalender-Link</strong> und deine <strong>Anmeldung</strong>: mit der Windows-Verschlüsselung (DPAPI) gespeichert, nie im Protokoll.</li>
+<li><strong>Chatverlauf</strong>, <strong>Gedächtnis</strong>, <strong>Einstellungen</strong> und ein kurzes <strong>Protokoll</strong> für die Fehlersuche (ohne Chat-Inhalte) im Ordner <code>%APPDATA%\Buddy Island</code>.</li>
+<li><strong>Ausführungsverlauf</strong> (<code>history.json</code>): kurzer Titel der Aufgabe, Schritte und Modelle, keine Antworten. Abschaltbar und löschbar in den Einstellungen.</li>
 <li><strong>Windows-Mitteilungen</strong>, <strong>«Läuft gerade»</strong> (Musik) und <strong>Termine</strong>: Buddy liest sie nur, um sie im Island zu zeigen. Sie werden nicht dauerhaft gespeichert.</li>
 <li><strong>Spielmodus</strong>: Buddy schaut nur, welches Programm im Vordergrund ist und ob Windows «Vollbild» meldet.</li>
+<li><strong>Musik-Visualizer</strong>: Buddy wertet den Ton aus, den Windows gerade abspielt (Lautstärke in Bass, Mitten und Höhen), nur solange Windows eine Wiedergabe meldet und nur auf dem PC. Es wird nichts aufgenommen, gespeichert oder verschickt.</li>
 </ul>
-<h2>KI-Nutzung</h2>
-<ul>
-<li>Die Nutzungs-Ansicht liest auf Wunsch die <strong>Protokolldateien von Claude Code und Codex</strong> auf deinem PC (<code>.claude\projects</code>, <code>.codex\sessions</code>). Buddy zählt daraus Tokens, Werkzeuge und Fehler und zeigt den ersten Auftrag einer Sitzung als Titel. Die Dateien werden nur gelesen, nie verändert oder verschickt. Abschaltbar unter «Lokale Protokolle lesen».</li>
-<li>Für «Was läuft gerade?» schaut Buddy kurz in die <strong>Liste der laufenden Programme</strong>, um bekannte KI-Programme zu erkennen. Davon wird nichts gespeichert.</li>
-<li>Fragst du Buddy im Chat nach deiner Nutzung, geht die Zusammenfassung (inkl. der Sitzungstitel) an Claude, damit er antworten kann.</li>
-<li>Mit einem Admin-Key fragt Buddy die offiziellen Usage- und Cost-Schnittstellen von Anthropic bzw. OpenAI ab.</li>
-</ul>
-<h2>Erkennung und Visualizer</h2>
-<ul>
-<li>Buddy prüft, ob Programme wie Claude Code, Codex oder Python installiert sind (Pfade und Versionen, keine Inhalte).</li>
-<li>Für den Musik-Visualizer im Island wertet Buddy den Ton aus, den Windows gerade abspielt (Lautstärke in Bass, Mitten und Höhen), und zwar nur, solange Windows eine Wiedergabe meldet. Das passiert ausschliesslich auf dem PC: Es wird nichts aufgenommen, gespeichert oder verschickt.</li>
-</ul>
+<p>Mit früheren Versionen gespeicherte API-Keys und Admin-Keys löscht Buddy ab Version 0.13 beim Start.</p>
 <h2>Sprache</h2>
 <ul>
 <li>«Hey Buddy» wird mit der eingebauten Windows-Spracherkennung <strong>auf dem PC</strong> erkannt.</li>
@@ -103,7 +79,7 @@
 <h2>Updates</h2>
 <p>Buddy fragt bei GitHub nach neuen Versionen und lädt sie über HTTPS. Installiert wird nur, wenn die Signatur und die Prüfsumme stimmen. Dabei werden keine Daten über dich verschickt.</p>
 <h2>Löschen</h2>
-<p>Deinstalliere Buddy über die Windows-Einstellungen und lösche den Ordner <code>%APPDATA%\Buddy Island</code>. Danach ist nichts mehr von Buddy auf deinem PC.</p>
+<p>Dein Konto löschen wir auf Anfrage an <a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a>. Auf dem PC: Buddy über die Windows-Einstellungen deinstallieren und den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Mit früheren Versionen eingerichtete Programme wie Ollama oder Colibrì sind eigene Programme und bleiben, bis du sie entfernst.</p>
       <a class="doc-back" href="./">Zurück zur Startseite</a>
     </article>
   </main>

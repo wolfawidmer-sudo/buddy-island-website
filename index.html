@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buddy Island – KI-Assistent oben am Windows-Bildschirm</title>
-  <meta name="description" content="Buddy Island ist ein Open-Source-Assistent für Windows 10 und 11, der als kleine Insel oben am Bildschirm wohnt. Lokal mit Ollama oder Colibrì, oder mit Claude, OpenAI, Grok und Gemini.">
+  <meta name="description" content="Buddy Island ist ein Open-Source-Assistent für Windows 10 und 11, der als kleine Insel oben am Bildschirm wohnt. Ein Konto bei Buddy Cloud, bezahlt mit Buddy Credits.">
   <link rel="canonical" href="https://buddy-island.top/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_CH">
   <meta property="og:site_name" content="Buddy Island">
   <meta property="og:title" content="Buddy Island – KI-Assistent oben am Windows-Bildschirm">
-  <meta property="og:description" content="Eine kleine Insel oben in Windows: Fragen, Timer, Musik, Mitteilungen. Lokal oder mit Claude, OpenAI, Grok und Gemini.">
+  <meta property="og:description" content="Eine kleine Insel oben in Windows: Fragen, Timer, Musik, Mitteilungen. Mit Buddy Cloud.">
   <meta property="og:url" content="https://buddy-island.top/">
   <meta property="og:image" content="https://buddy-island.top/img/og.png">
   <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
       <nav aria-label="Hauptnavigation">
         <ul class="nav" id="nav">
           <li><a href="#kann">Funktionen</a></li>
-          <li><a href="#ki">KI</a></li>
+          <li><a href="#preise">Preise</a></li>
           <li><a href="#start">Installation</a></li>
           <li><a href="#fragen">Fragen</a></li>
         </ul>
@@ -45,12 +45,12 @@
     <section class="hero wrap">
       <p class="eyebrow">Für Windows 10 und 11 · Open Source</p>
       <h1>Ein Assistent, der oben am Bildschirm wohnt.</h1>
-      <p class="lead">Buddy Island ist eine kleine schwarze Insel oben in der Mitte von Windows. Ein Tastendruck, und du fragst, stellst einen Timer oder siehst deine Mitteilungen, ohne ein Fenster zu wechseln. Die KI läuft auf deinem PC oder bei dem Anbieter, den du wählst.</p>
+      <p class="lead">Buddy Island ist eine kleine schwarze Insel oben in der Mitte von Windows. Ein Tastendruck, und du fragst, stellst einen Timer oder siehst deine Mitteilungen, ohne ein Fenster zu wechseln. Anmelden, Guthaben laden, loslegen.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/wolfawidmer-sudo/buddy-island/releases/latest" data-download>Für Windows herunterladen</a>
         <a class="link" href="https://github.com/wolfawidmer-sudo/buddy-island">Quellcode ansehen</a>
       </div>
-      <p class="meta"><span data-version>Version 0.12.0</span><span data-size></span> · kostenlos · MIT-Lizenz</p>
+      <p class="meta"><span data-version>Version 0.13.0</span><span data-size></span> · Download kostenlos · MIT-Lizenz</p>
 
       <figure class="stage">
         <div class="stage-screen">
@@ -79,49 +79,27 @@
         </article>
         <article class="row">
           <div class="row-text">
-            <h3>Den PC bedienen, wenn du es willst</h3>
-            <p>Mit Claude kann Buddy Maus und Tastatur übernehmen, etwa «Öffne den Editor und schreib eine Einkaufsliste». Vor jeder Aufgabe fragt er um Erlaubnis, und mit demselben Tastenkürzel stoppst du ihn jederzeit.</p>
-            <p class="aside">Solange Buddy deinen Bildschirm aufnimmt und auswertet, leuchtet eine feine Linie am Bildschirmrand. Sie erscheint nur dann und verschwindet, sobald er fertig ist.</p>
+            <h3>Du behältst die Kontrolle</h3>
+            <p>Bevor Buddy Dateien verschiebt oder etwas löscht, fragt er dich. Chatverlauf, Gedächtnis und Einstellungen bleiben auf deinem PC, und mit dem Stopp-Knopf in der Insel hältst du ihn jederzeit an.</p>
           </div>
-          <img class="shot" src="img/settings-control.webp" width="1000" height="1176" loading="lazy" alt="Einstellungen: Buddy darf den PC steuern und fragt vor jeder Aufgabe.">
+          <img class="shot" src="img/open-timer.webp" width="1000" height="734" loading="lazy" alt="Die geöffnete Insel mit einer Mitteilung und einem laufenden Timer.">
         </article>
       </div>
     </section>
 
-    <section class="block wrap" id="ki" aria-labelledby="ki-t">
-      <h2 id="ki-t">Welche KI antwortet</h2>
-      <p class="intro">Du wählst. Buddy bleibt dabei derselbe: gleiche Art zu antworten, gleiche Grundregeln, bei jedem Anbieter und jedem Modell.</p>
+    <section class="block wrap" id="preise" aria-labelledby="preise-t">
+      <h2 id="preise-t">Buddy Cloud und Preise</h2>
+      <p class="intro">Buddy antwortet über Buddy Cloud. Du meldest dich mit Google oder E-Mail an und bezahlst mit Buddy Credits. Abgerechnet wird nach dem, was du wirklich brauchst.</p>
       <div class="table-wrap">
         <table class="providers">
-          <thead><tr><th scope="col">Option</th><th scope="col">Wo es rechnet</th><th scope="col">Du brauchst</th><th scope="col">Kosten</th></tr></thead>
+          <thead><tr><th scope="col">Option</th><th scope="col">Was du bekommst</th><th scope="col">Preis</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Lokal mit Ollama</th><td data-label="Wo es rechnet">auf deinem PC</td><td data-label="Du brauchst">etwa 2 bis 20 GB Platz, je nach Modell</td><td data-label="Kosten">keine</td></tr>
-            <tr><th scope="row">Lokal mit Colibrì</th><td data-label="Wo es rechnet">auf deinem PC, Teile von der SSD</td><td data-label="Du brauchst">mindestens 16 GB Arbeitsspeicher, 25 GB Platz, Python</td><td data-label="Kosten">keine</td></tr>
-            <tr><th scope="row">Claude (Anthropic)</th><td data-label="Wo es rechnet">beim Anbieter</td><td data-label="Du brauchst">einen API-Key</td><td data-label="Kosten">nach Verbrauch</td></tr>
-            <tr><th scope="row">OpenAI</th><td data-label="Wo es rechnet">beim Anbieter</td><td data-label="Du brauchst">einen API-Key</td><td data-label="Kosten">nach Verbrauch</td></tr>
-            <tr><th scope="row">Grok (xAI)</th><td data-label="Wo es rechnet">beim Anbieter</td><td data-label="Du brauchst">einen API-Key</td><td data-label="Kosten">nach Verbrauch</td></tr>
-            <tr><th scope="row">Gemini (Google)</th><td data-label="Wo es rechnet">beim Anbieter</td><td data-label="Du brauchst">einen API-Key</td><td data-label="Kosten">nach Verbrauch</td></tr>
+            <tr><th scope="row">Guthaben aufladen</th><td data-label="Was du bekommst">100 Buddy Credits pro Dollar, gekaufte Credits verfallen nicht</td><td data-label="Preis">eigener Betrag ab $5</td></tr>
+            <tr><th scope="row">Buddy Plus</th><td data-label="Was du bekommst">1000 Buddy Credits jeden Monat, jederzeit kündbar</td><td data-label="Preis">$10 pro Monat</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="small">Die PC-Steuerung mit Maus und Tastatur gibt es nur mit Claude. Lokale Modelle können Buddys einfache Werkzeuge nutzen (Timer, Apps, Musik), wenn das Modell es unterstützt.</p>
-
-      <div class="split" id="lokal">
-        <div>
-          <h3>Lokal einrichten, ohne Fachwissen</h3>
-          <ol class="steps">
-            <li><strong>Buddy prüft deinen PC.</strong> Prozessor, Arbeitsspeicher, Grafikkarte und freien Platz.</li>
-            <li><strong>Er schlägt ein Modell vor</strong> und zeigt vorher, wie gross der Download ist und wie viel Speicher es braucht.</li>
-            <li><strong>Ein Klick richtet alles ein:</strong> Ollama (Signatur wird geprüft), dann das Modell mit Fortschritt und Restzeit.</li>
-            <li><strong>Danach chattest du direkt.</strong> Deine Nachrichten gehen an Ollama auf deinem PC, nicht ins Internet.</li>
-          </ol>
-          <p class="small">Grosse Modelle lässt Buddy mit <a href="https://github.com/JustVugg/colibri">Colibrì</a> laufen, wo immer es geht. Colibrì liest Teile von der SSD, darum laufen auch Modelle, die nicht in den Arbeitsspeicher passen. Im Test auf einem Windows-PC mit 16 GB und ohne Grafikkarte lud Colibrì das Modell Qwen 3.6 35B in 11 statt 91 Sekunden und antwortete mit 4.4 statt 2.8 Tokens pro Sekunde. Liegt das Modell schon bei Ollama, übernimmt Buddy die Datei, ohne neuen Download.</p>
-        </div>
-        <figure>
-          <img class="shot" src="img/local-setup.webp" width="1000" height="964" loading="lazy" alt="Ersteinrichtung in der Insel: Buddy zeigt den PC, ein empfohlenes Modell mit Download-Grösse und den Knopf Einrichten.">
-          <figcaption>Beispiel auf einem PC mit 12 GB Grafikspeicher. Was Buddy vorschlägt, hängt von deinem PC ab.</figcaption>
-        </figure>
-      </div>
+      <p class="small">Bezahlt wird über Stripe. Die Preise verstehen sich ohne Mehrwertsteuer; Stripe rechnet sie je nach Land dazu. Mehr in den <a href="agb.html">AGB</a>.</p>
     </section>
 
     <section class="block wrap" id="start" aria-labelledby="start-t">
@@ -129,17 +107,17 @@
       <ol class="install">
         <li><span>1</span><div><h3>Herunterladen</h3><p>Die Installationsdatei für Windows kommt direkt aus dem GitHub-Release<span data-size-text></span>.</p></div></li>
         <li><span>2</span><div><h3>Installieren</h3><p>Datei öffnen. Weil Buddy nicht mit einem bezahlten Zertifikat signiert ist, warnt Windows: «Weitere Informationen» und dann «Trotzdem ausführen».</p></div></li>
-        <li><span>3</span><div><h3>KI wählen</h3><p>Klick oben auf die Insel. Entweder «Einrichten» für die lokale KI, oder einen API-Key für Claude, OpenAI, Grok oder Gemini einfügen.</p></div></li>
+        <li><span>3</span><div><h3>Anmelden</h3><p>Beim ersten Start führt Buddy dich durch alles: Sprache wählen, mit Google oder E-Mail anmelden, Guthaben laden.</p></div></li>
         <li><span>4</span><div><h3>Öffnen</h3><p>Mit <kbd>Strg</kbd> + <kbd>Umschalt</kbd> + <kbd>Leertaste</kbd> oder einem Klick auf die Insel. Updates installiert Buddy selbst, nach Prüfung ihrer Signatur.</p></div></li>
       </ol>
     </section>
 
     <section class="block wrap" id="neu" aria-labelledby="neu-t">
-      <h2 id="neu-t">Neu in <span data-version>Version 0.12.0</span></h2>
+      <h2 id="neu-t">Neu in <span data-version>Version 0.13.0</span></h2>
       <ul class="news" id="newsList">
-        <li><h3>Lokale KI läuft mit Colibrì</h3><p>Grosse Modelle laufen jetzt immer mit Colibrì, wo es dein PC kann. Im Test lud ein grosses Modell in 11 statt 91 Sekunden und antwortete gut anderthalbmal so schnell.</p></li>
-        <li><h3>Ohne Umweg eingerichtet</h3><p>Liegt ein Modell schon auf deinem PC, stellt Buddy es selbst auf Colibrì um, ohne neuen Download. Sonst genügt ein Klick, den Rest macht Buddy.</p></li>
-        <li><h3>Downloads laufen weiter</h3><p>Bleibt ein grosser Download stehen, setzt Buddy ihn selbst fort. Schon geladene Teile bleiben erhalten.</p></li>
+        <li><h3>Buddy Cloud</h3><p>Melde dich mit Google oder E-Mail an und leg los. Bezahlt wird mit Buddy Credits: ab $5 oder mit Buddy Plus für $10 im Monat.</p></li>
+        <li><h3>Aufgeräumte Einstellungen</h3><p>Fünf klare Bereiche statt einer langen Liste. Konto und Guthaben haben einen eigenen Platz oben in der Insel.</p></li>
+        <li><h3>Einführung beim ersten Start</h3><p>Sprache, Anmeldung, Tastenkürzel: Buddy zeigt dir in wenigen Schritten, wie alles geht.</p></li>
       </ul>
       <a class="link" href="https://github.com/wolfawidmer-sudo/buddy-island/releases">Alle Versionen auf GitHub</a>
     </section>
@@ -147,14 +125,12 @@
     <section class="block wrap" id="daten" aria-labelledby="daten-t">
       <h2 id="daten-t">Was mit deinen Daten passiert</h2>
       <dl class="facts">
-        <dt>Buddy hat keine eigenen Server.</dt>
-        <dd>Kein Konto, keine Anmeldung, keine Nutzungsstatistik. Einstellungen und Verlauf liegen auf deinem PC.</dd>
-        <dt>Lokal heisst lokal.</dt>
-        <dd>Mit Ollama oder Colibrì gehen deine Nachrichten nur an das Programm auf deinem PC (127.0.0.1). Aus dem Internet kommen nur die Programme und Modelle, die du bestätigst.</dd>
-        <dt>Bei einem Anbieter geht deine Frage nur dorthin.</dt>
-        <dd>Was du schreibst, geht an den einen Anbieter, den du gewählt hast, über deinen eigenen API-Key. Für die PC-Steuerung schickt Buddy dabei Bildschirmfotos an Claude.</dd>
-        <dt>Schlüssel bleiben verschlüsselt.</dt>
-        <dd>API-Keys speichert Buddy mit der Windows-Verschlüsselung und schreibt sie nie ins Protokoll.</dd>
+        <dt>Deine Fragen gehen nur zur Antwort durch.</dt>
+        <dd>Was du schreibst, geht über unseren Server an OpenAI und zurück. Wir speichern die Inhalte nicht.</dd>
+        <dt>Dein Verlauf bleibt bei dir.</dt>
+        <dd>Chat, Gedächtnis, Einstellungen und Mitteilungen liegen auf deinem PC. Keine Werbung, keine Nutzungsstatistik.</dd>
+        <dt>Bezahlen über Stripe.</dt>
+        <dd>Kartendaten sehen wir nie. Auf deinem PC ist die Anmeldung mit der Windows-Verschlüsselung gespeichert.</dd>
       </dl>
       <a class="link" href="privacy.html">Ganze Datenschutzerklärung</a>
     </section>
@@ -162,15 +138,13 @@
     <section class="block wrap" id="fragen" aria-labelledby="fragen-t">
       <h2 id="fragen-t">Fragen</h2>
       <div class="faq">
-        <details id="faq-cost"><summary>Was kostet Buddy?</summary><p>Buddy selbst nichts. Mit der lokalen KI entstehen keine Kosten. Mit Claude, OpenAI, Grok oder Gemini bezahlst du beim Anbieter nach Verbrauch; in den Einstellungen setzt du ein Monatslimit.</p></details>
-        <details id="faq-key"><summary>Brauche ich einen API-Key?</summary><p>Nur für Claude, OpenAI, Grok oder Gemini. Den Key erstellst du im Konto des Anbieters. Ein Abo wie ChatGPT Plus oder Claude Pro enthält keinen API-Zugang. Die lokale KI braucht keinen Key.</p></details>
-        <details id="faq-local"><summary>Wie schnell ist die lokale KI?</summary><p>Das hängt vom PC ab. Mit einer Grafikkarte, in die das Modell passt, antwortet sie flüssig; nur mit dem Prozessor deutlich langsamer. Buddy zeigt vor dem Download eine grobe Einschätzung und kann das Tempo auf deinem PC messen.</p></details>
-        <details id="faq-colibri"><summary>Was ist Colibrì?</summary><p>Ein eigenständiges Open-Source-Programm, das sehr grosse Modelle laufen lässt, indem es Teile von der SSD liest. Buddy nutzt es für grosse Modelle immer, wenn es auf deinem PC läuft; Ollama bleibt für kleinere Modelle, die Colibrì nicht kennt. In den Einstellungen lässt sich das abschalten.</p></details>
-        <details id="faq-screen"><summary>Sieht Buddy ständig meinen Bildschirm?</summary><p>Nein. Nur während einer Aufgabe, für die du ihm die PC-Steuerung erlaubt hast. Solange er hinschaut, leuchtet der Bildschirmrand; ohne diesen Rand nimmt er nichts auf. Läuft ein Spiel, pausiert er.</p></details>
+        <details id="faq-cost"><summary>Was kostet Buddy?</summary><p>Der Download ist gratis. Für die Antworten lädst du Buddy Credits auf (eigener Betrag ab $5) oder nimmst Buddy Plus für $10 im Monat. Dein Guthaben siehst du jederzeit oben in der Insel.</p></details>
+        <details id="faq-key"><summary>Kann ich meinen eigenen API-Key oder eine lokale KI nutzen?</summary><p>Nicht mehr. Ab Version 0.13 läuft Buddy nur noch über Buddy Cloud. Mit früheren Versionen gespeicherte Keys löscht Buddy beim Update.</p></details>
+        <details id="faq-control"><summary>Kann Buddy meinen PC mit Maus und Tastatur bedienen?</summary><p>Mit Buddy Cloud noch nicht. Apps öffnen, Timer, Musik und Dateien ordnen gehen weiterhin.</p></details>
         <details id="faq-theme"><summary>Gibt es Buddy auch hell?</summary><p>Ja. Unter Einstellungen → Erscheinungsbild wählst du Dunkel, Hell oder wie Windows. Geschlossen bleibt die Insel immer schwarz, die Augen haben deine Akzentfarbe.</p></details>
         <details id="faq-games"><summary>Stört Buddy beim Spielen?</summary><p>Läuft ein Spiel im Vordergrund, blendet Buddy sich aus: keine Einblendungen, kein Ton, keine Steuerung. Verpasste Mitteilungen siehst du danach.</p></details>
-        <details id="faq-windows"><summary>Welche Windows-Versionen?</summary><p>Windows 10 ab Version 1809 und Windows 11, jeweils 64 Bit. Die lokale KI mit Ollama braucht Windows 10 22H2 oder neuer.</p></details>
-        <details id="faq-remove"><summary>Wie entferne ich Buddy?</summary><p>Windows-Einstellungen → Apps → Installierte Apps → Buddy Island → Deinstallieren. Für alles den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Ollama und Colibrì sind eigene Programme und bleiben, bis du sie entfernst.</p></details>
+        <details id="faq-windows"><summary>Welche Windows-Versionen?</summary><p>Windows 10 ab Version 1809 und Windows 11, jeweils 64 Bit.</p></details>
+        <details id="faq-remove"><summary>Wie entferne ich Buddy?</summary><p>Windows-Einstellungen → Apps → Installierte Apps → Buddy Island → Deinstallieren. Für alles den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Falls du früher Ollama oder Colibrì eingerichtet hast: Das sind eigene Programme, die bleiben, bis du sie entfernst.</p></details>
       </div>
     </section>
   </main>
