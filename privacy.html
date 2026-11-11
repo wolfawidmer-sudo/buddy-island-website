@@ -41,6 +41,7 @@
 <ul>
 <li><strong>Konto:</strong> E-Mail-Adresse, Passwort (nur verschlüsselt gespeichert), optional dein Name. Bei «Mit Google anmelden» zusätzlich Name, E-Mail und Profilbild-Adresse von Google.</li>
 <li><strong>Guthaben und Käufe:</strong> Buddy Credits, Käufe, Abo-Status, Rückbuchungen. Kartendaten sehen wir nie; die verarbeitet nur Stripe.</li>
+<li><strong>Startguthaben:</strong> Neue Konten bekommen einmalig 50 BC. Damit das nur einmal pro Person und PC klappt, schickt Buddy nach der Anmeldung eine PC-Kennung (ein Hash der Windows-Gerätekennung, nicht die Kennung selbst). Wir speichern davon, von deiner E-Mail-Adresse und von deiner IP-Adresse nur nochmals verschlüsselte Prüfwerte (HMAC), aus denen sich nichts zurückrechnen lässt. Sie bleiben, solange es Buddy Cloud gibt, damit das Startguthaben nicht mehrfach bezogen wird.</li>
 <li><strong>Nutzung:</strong> pro Anfrage Zeitpunkt, Modell, Anzahl Tokens und verbrauchte Credits. Keine Inhalte.</li>
 <li><strong>Inhalte deiner Anfragen:</strong> Was du Buddy schreibst oder sagst, und die Ergebnisse der Werkzeuge, die Buddy für deine Anfrage benutzt (zum Beispiel «Timer gestellt», deine Termine oder Mitteilungen, aber nur wenn du danach fragst), gehen über unseren Server an OpenAI und die Antwort zurück an dich. Unser Server speichert diese Inhalte nicht, und wir bitten OpenAI, sie nicht zu speichern (<code>store: false</code>). Wie OpenAI API-Daten behandelt, steht in deren Datenschutzerklärung.</li>
 <li><strong>Technische Protokolle:</strong> Zeit, Adresse der Anfrage, Status, ohne Inhalte und ohne Passwörter oder Schlüssel. Deine IP-Adresse wird nur kurz im Arbeitsspeicher gehalten, um Missbrauch zu bremsen.</li>
@@ -70,16 +71,20 @@
 <p>Mit früheren Versionen gespeicherte API-Keys und Admin-Keys löscht Buddy ab Version 0.13 beim Start.</p>
 <h2>Sprache</h2>
 <ul>
-<li>Das Wakeword («Hey Buddy» oder ein eigenes) wird nur <strong>auf dem PC</strong> erkannt, mit Vosk (Open Source, Apache 2.0). Dafür lädt Buddy beim ersten Einschalten einmal die Vosk-Laufzeit von files.pythonhosted.org und ein Sprachmodell von alphacephei.com. Diese Server sehen dabei nur deine IP-Adresse. Es geht dabei kein Ton aus dem PC. Klappt Vosk nicht, übernimmt die Windows-Spracherkennung, ebenfalls auf dem PC.</li>
+<li>Das Wakeword («Hey Buddy» oder ein eigenes) wird nur <strong>auf dem PC</strong> erkannt, mit Vosk (Open Source, Apache 2.0). Dafür lädt Buddy beim ersten Einschalten einmal die Vosk-Laufzeit von files.pythonhosted.org und ein Sprachmodell von alphacephei.com. Diese Server sehen dabei nur deine IP-Adresse. In der Version aus dem Microsoft Store ist die Vosk-Laufzeit schon dabei, geladen wird nur das Sprachmodell. Es geht dabei kein Ton aus dem PC. Klappt Vosk nicht, übernimmt die Windows-Spracherkennung, ebenfalls auf dem PC.</li>
 <li>Für das Diktat nutzt Buddy die Spracherkennung von Windows. Ist in Windows die <strong>Online-Spracherkennung</strong> eingeschaltet, verarbeitet Microsoft das Gesprochene. Sonst bleibt alles auf dem PC.</li>
 <li>Vorlesen läuft mit den Windows-Stimmen auf dem PC.</li>
 </ul>
 <h2>Kalender</h2>
 <p>Buddy lädt deinen privaten iCal-Link direkt bei deinem Kalenderanbieter (z. B. Google oder Microsoft), etwa alle 15 Minuten.</p>
+<h2>Antworten melden</h2>
+<p>Unter jeder Antwort von Buddy gibt es «Melden». Damit öffnet Buddy einen E-Mail-Entwurf an <a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a> mit deiner Frage, der Antwort und der Versionsnummer. Verschickt wird nur, was du selbst in deinem E-Mail-Programm sendest. Wir nutzen die Meldung nur, um unpassende Antworten zu prüfen und Buddy zu verbessern.</p>
 <h2>Updates</h2>
 <p>Buddy fragt bei GitHub nach neuen Versionen und lädt sie über HTTPS. Installiert wird nur, wenn die Signatur und die Prüfsumme stimmen. Dabei werden keine Daten über dich verschickt.</p>
+<h2>Microsoft Store</h2>
+<p>Hast du Buddy aus dem Microsoft Store, installiert und aktualisiert Microsoft die App. Für die Daten, die Microsoft dabei bearbeitet, gilt die <a href="https://privacy.microsoft.com/de-de/privacystatement">Datenschutzerklärung von Microsoft</a>. Buddy selbst fragt in dieser Version nicht bei GitHub nach Updates.</p>
 <h2>Löschen</h2>
-<p>Dein Konto löschen wir auf Anfrage an <a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a>. Auf dem PC: Buddy über die Windows-Einstellungen deinstallieren und den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Mit früheren Versionen eingerichtete Programme wie Ollama oder Colibrì sind eigene Programme und bleiben, bis du sie entfernst.</p>
+<p>Dein Konto löschen wir auf Anfrage an <a href="mailto:contact@buddy-island.top">contact@buddy-island.top</a>. Auf dem PC: Buddy über die Windows-Einstellungen deinstallieren und den Ordner <code>%APPDATA%\Buddy Island</code> löschen. Bei der Version aus dem Microsoft Store löscht Windows Buddys Daten beim Deinstallieren selbst. Mit früheren Versionen eingerichtete Programme wie Ollama oder Colibrì sind eigene Programme und bleiben, bis du sie entfernst.</p>
       <a class="doc-back" href="./">Zurück zur Startseite</a>
     </article>
   </main>
